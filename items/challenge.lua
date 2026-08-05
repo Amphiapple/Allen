@@ -1,4 +1,5 @@
 Challenge_stakes = {
+    c_allen_static = {stake = 6},
     c_allen_blue_percent = {stake = 5},
 }
 
@@ -58,6 +59,49 @@ SMODS.Challenge {
             }))
         end
     end,
+}
+
+local static_cards = {
+    --upwards scaling cards
+    {id = 'j_ceremonial'},
+    {id = 'j_ride_the_bus'},
+    {id = 'j_runner'},
+    {id = 'j_constellation'},
+    {id = 'j_green_joker'},
+    {id = 'j_red_card'},
+    {id = 'j_madness'},
+    {id = 'j_square'},
+    {id = 'j_vampire'},
+    {id = 'j_hologram'},
+    {id = 'j_rocket'},
+    {id = 'j_obelisk'},
+    {id = 'j_lucky_cat'},
+    {id = 'j_flash'},
+    {id = 'j_trousers'},
+    {id = 'j_castle'},
+    {id = 'j_glass'},
+    {id = 'j_wee'},
+    {id = 'j_caino'},
+    {id = 'j_yorick'},
+}
+
+SMODS.Challenge {
+    key = 'static',
+    loc_txt = {
+        name = 'Static'
+    },
+    rules = {
+        custom = {
+            {id = 'purple_stake'},
+            {id = 'stevecraft28980'},
+        },
+    },
+    restrictions = {
+        banned_cards = static_cards,
+    },
+    deck = {
+        type = 'Challenge Deck',
+    },
 }
 
 SMODS.Challenge {
