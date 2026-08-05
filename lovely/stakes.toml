@@ -1,0 +1,13 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = 1
+
+# Challenge stake change
+[[patches]]
+[patches.pattern]
+target = "functions/button_callbacks.lua"
+pattern = "G.FUNCS.start_run(e, {stake = 1, challenge = G.CHALLENGES[e.config.id]})"
+position = 'at'
+payload = "G.FUNCS.start_run(e, {stake = get_challenge_stake(e), challenge = G.CHALLENGES[e.config.id]})"
+match_indent = true

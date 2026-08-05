@@ -1,5 +1,6 @@
 Challenge_stakes = {
     c_allen_static = {stake = 6},
+    c_allen_buy_now_pay_later = {stake = 6},
     c_allen_blue_percent = {stake = 5},
 }
 
@@ -102,6 +103,41 @@ SMODS.Challenge {
     deck = {
         type = 'Challenge Deck',
     },
+}
+
+SMODS.Challenge {
+    key = 'buy_now_pay_later',
+    loc_txt = {
+        name = 'Buy Now, Pay Later'
+    },
+    rules = {
+        custom = {
+            {id = 'purple_stake'},
+            {id = 'buy_now_pay_later'},
+            {id = 'buy_now_pay_later_2'},
+            {id = 'rat_queen'},
+        },
+    },
+    restrictions = {
+        banned_cards = {
+            {id = 'j_campfire'}
+        }
+    },
+    deck = {
+        type = 'Challenge Deck',
+    },
+
+    calculate = function(self, context)
+        if context.modify_shop_card and context.card.ability.set == 'Joker' then
+            context.card.ability.couponed = true
+            recalc_all_costs()
+        elseif context.end_of_round and context.beat_boss then
+            for k, v in ipairs(G.jokers.cards) do
+                v:set_rental(true)
+                v:juice_up()
+            end
+        end
+    end
 }
 
 SMODS.Challenge {
@@ -280,7 +316,7 @@ SMODS.Challenge {
         custom = {
             {id = 'blue_stake'},
             {id = 'blue_deck'},
-            {id = 'blue_percent_1'},
+            {id = 'blue_percent'},
             {id = 'blue_percent_2'},
         },
     },

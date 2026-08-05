@@ -1,0 +1,18 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = 1
+
+# Change costs and sell costs
+[[patches]]
+[patches.pattern]
+target = 'card.lua'
+pattern = "if self.area and self.ability.couponed and (self.area == G.shop_jokers or self.area == G.shop_booster) then self.cost = 0 end"
+position = 'after'
+payload = '''
+--buy now pay later sell costs
+if self.ability.set == "Joker" and G.GAME.modifiers.buy_now_pay_later then
+    self.sell_cost = 0
+end
+'''
+match_indent = true

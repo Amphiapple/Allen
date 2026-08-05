@@ -1,0 +1,24 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = 1
+
+# mega purple stake requirement scaling
+[[patches]]
+[patches.pattern]
+target = "functions/misc_functions.lua"
+pattern = '''
+local amounts = {
+    300,  1000, 3200,  9000,  25000,  60000,  110000,  200000
+    --300,  1000, 3000,  8000,  22000,  50000,  90000,  180000
+}
+'''
+position = 'after'
+payload = '''
+if G.GAME.modifiers.mega_purple then
+    amounts = {
+        300,  1200,  5000,  18000,  60000,  180000,  450000,  1000000
+    }
+end
+'''
+match_indent = true
