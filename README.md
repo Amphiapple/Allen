@@ -1,2 +1,2 @@
 # Allen
-Challenges mod for Balatyro
+Challenges mod for Balatro
