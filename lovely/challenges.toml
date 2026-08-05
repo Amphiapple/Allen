@@ -1,0 +1,46 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = 1
+
+# Challenge stake change
+[[patches]]
+[patches.pattern]
+target = "functions/button_callbacks.lua"
+pattern = "G.FUNCS.start_run(e, {stake = 1, challenge = G.CHALLENGES[e.config.id]})"
+position = 'at'
+payload = "G.FUNCS.start_run(e, {stake = get_challenge_stake(e), challenge = G.CHALLENGES[e.config.id]})"
+match_indent = true
+
+# Thirteen Cards disable drawing cards
+[[patches]]
+[patches.pattern]
+target = 'functions/state_events.lua'
+pattern = "if G.GAME.blind.name == 'The Serpent' and"
+position = 'before'
+payload = '''
+if G.GAME.modifiers.thirteen_cards and not (G.STATE == G.STATES.TAROT_PACK or G.STATE == G.STATES.SPECTRAL_PACK or G.STATE == G.STATES.SMODS_BOOSTER_OPENED) and (G.GAME.current_round.hands_played > 0 or G.GAME.current_round.discards_used > 0) then
+    hand_space = 0
+end
+'''
+match_indent = true
+
+# mega purple stake requirement scaling
+[[patches]]
+[patches.pattern]
+target = "functions/misc_functions.lua"
+pattern = '''
+local amounts = {
+    300,  1000, 3200,  9000,  25000,  60000,  110000,  200000
+    --300,  1000, 3000,  8000,  22000,  50000,  90000,  180000
+}
+'''
+position = 'after'
+payload = '''
+if G.GAME.modifiers.mega_purple then
+    amounts = {
+        300,  1200,  5000,  18000,  60000,  180000,  450000,  1000000
+    }
+end
+'''
+match_indent = true
