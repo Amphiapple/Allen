@@ -26,10 +26,13 @@ return {
                 "All {C:attention}Vouchers{} are {C:attention,T:v_paint_brush}Paint Brush{}"
             },
             ch_c_rent_is_due_2 = {
-                "{C:attention}Vouchers{} cost {C:money}$5{} more each {C:attention}Ante{}"
+                "{C:attention}Vouchers{} cost {C:money}$5{} more and"
             },
             ch_c_rent_is_due_3 = {
                 "{C:red}-1{} hand size when {C:attention}Boss Blind{} is defeated"
+            },
+            ch_c_domain_expansion = {
+                "Add {C:dark_edition}Negative{} to a random {C:attention}Joker{} when {C:attention}Boss Blind{} is defeated"
             },
             ch_c_mega_purple = {
                 "Required score scales extremely fast for each {C:attention}Ante{}"
@@ -56,6 +59,9 @@ return {
             },
             ch_c_synfulness = {
                 "By {C:attention}Synfulness._{}"
+            },
+            ch_c_mr_dell = {
+                "By {C:attention}Mr. Dell{}"
             },
         },
     },
