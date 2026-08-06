@@ -11,6 +11,7 @@ return {
             ch_c_gold_stake = {
                 "Challenge is played on {C:gold}Gold Stake{}"
             },
+
             --special challenge rules
             ch_c_thirteen_cards = {
                 "After round begins, draw no cards"
@@ -20,6 +21,15 @@ return {
             },
             ch_c_buy_now_pay_later_2 = {
                 "when {C:attention}Boss Blind{} is defeated"
+            },
+            ch_c_rent_is_due = {
+                "All {C:attention}Vouchers{} are {C:attention,T:v_paint_brush}Paint Brush{}"
+            },
+            ch_c_rent_is_due_2 = {
+                "{C:attention}Vouchers{} cost {C:money}$5{} more each {C:attention}Ante{}"
+            },
+            ch_c_rent_is_due_3 = {
+                "{C:red}-1{} hand size when {C:attention}Boss Blind{} is defeated"
             },
             ch_c_mega_purple = {
                 "Required score scales extremely fast for each {C:attention}Ante{}"
@@ -33,6 +43,7 @@ return {
             ch_c_blue_percent_2 = {
                 "Must play every {C:attention}Small Blind{} and skip every {C:attention}Big Blind{}"
             },
+
             --creators
             ch_c_amphiapple = {
                 "By {C:attention}Amphiapple{}"
@@ -42,6 +53,9 @@ return {
             },
             ch_c_rat_queen = {
                 "By {C:attention}Rat_Queen{}"
+            },
+            ch_c_synfulness = {
+                "By {C:attention}Synfulness._{}"
             },
         },
     },

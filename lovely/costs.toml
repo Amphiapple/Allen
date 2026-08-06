@@ -14,5 +14,9 @@ payload = '''
 if self.ability.set == "Joker" and G.GAME.modifiers.buy_now_pay_later then
     self.sell_cost = 0
 end
+--rent is due voucher costs
+if self.ability.set == "Voucher" and G.GAME.modifiers.rent_is_due then
+    self.cost = self.cost + 5 * (G.GAME.round_resets.ante - 1)
+end
 '''
 match_indent = true
