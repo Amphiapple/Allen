@@ -26,6 +26,7 @@ SMODS.Challenge {
     rules = {
         custom = {
             {id = 'thirteen_cards'},
+            {id = 'amphiapple'},
         },
         modifiers = {
             {id = 'hand_size', value = 13},
@@ -271,6 +272,7 @@ SMODS.Challenge {
     rules = {
         custom = {
             {id = 'mega_purple'},
+            {id = 'amphiapple'},
         },
     },
     restrictions = {
