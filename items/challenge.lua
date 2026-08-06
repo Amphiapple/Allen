@@ -1,6 +1,7 @@
 Challenge_stakes = {
     c_allen_static = {stake = 6},
     c_allen_buy_now_pay_later = {stake = 6},
+    c_allen_domain_expansion = {stake = 8},
     c_allen_blue_percent = {stake = 5},
 }
 
