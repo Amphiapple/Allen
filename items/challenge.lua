@@ -249,7 +249,7 @@ SMODS.Challenge {
                     local pool = {}
                     for k, v in pairs(G.jokers.cards) do
                         if v.ability.set == 'Joker' and (not v.edition) then
-                            table.insert(self.pool, v)
+                            table.insert(pool, v)
                         end
                     end
                     if next(pool) then
