@@ -12,6 +12,14 @@ return {
                 "Challenge is played on {C:gold}Gold Stake{}"
             },
 
+            --deck rules
+            ch_c_blue_deck = {
+                "Challenge is played on {C:blue}Blue Deck{}"
+            },
+            ch_c_abandoned_deck = {
+                "Challenge is played on {C:attention}Abandoned Deck{}"
+            },
+
             --special challenge rules
             ch_c_thirteen_cards = {
                 "After round begins, draw no cards"
@@ -34,11 +42,14 @@ return {
             ch_c_domain_expansion = {
                 "Add {C:dark_edition}Negative{} to a random {C:attention}Joker{} when {C:attention}Boss Blind{} is defeated"
             },
+            ch_c_minesweeper = {
+                "Add a random {C:attention}face{} card to your deck each hand played"
+            },
+            ch_c_minesweeper_2 = {
+                "Lose run when {C:attention,T:j_ride_the_bus}Ride the Bus{} resets"
+            },
             ch_c_mega_purple = {
                 "Required score scales extremely fast for each {C:attention}Ante{}"
-            },
-            ch_c_blue_deck = {
-                "Challenge is played on {C:blue}Blue Deck{}"
             },
             ch_c_blue_percent = {
                 "Must play only {C:clubs}Clubs{}, {C:attention}Bonus{}, {C:attention}Wild{}, {C:dark_edition}Foil{}, and {C:blue}Blue Seal{} cards"
