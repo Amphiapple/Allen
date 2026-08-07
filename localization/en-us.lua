@@ -2,6 +2,9 @@ return {
     misc = {
         v_text = {
             --stake rules
+            ch_c_black_stake = {
+                "Challenge is played on Black Stake"
+            },
             ch_c_blue_stake = {
                 "Challenge is played on {C:blue}Blue Stake{}"
             },

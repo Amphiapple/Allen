@@ -1,9 +1,10 @@
 Challenge_stakes = {
     c_allen_static = {stake = 6},
     c_allen_buy_now_pay_later = {stake = 6},
+    c_allen_rent_is_due = {stake = 4},
     c_allen_domain_expansion = {stake = 8},
-    c_allen_blue_percent = {stake = 5},
     c_allen_minesweeper = {stake = 8},
+    c_allen_blue_percent = {stake = 5},
 }
 
 local thirteen_cards = {
@@ -185,6 +186,7 @@ SMODS.Challenge {
     },
     rules = {
         custom = {
+            {id = 'black_stake'},
             {id = 'rent_is_due'},
             {id = 'rent_is_due_2'},
             {id = 'rent_is_due_3'},
@@ -198,7 +200,7 @@ SMODS.Challenge {
         }
     },
     deck = {
-        type = 'Challenge Deck',
+        type = 'Yellow Deck',
     },
 
     calculate = function(self, context)
