@@ -4,6 +4,7 @@ Challenge_stakes = {
     c_allen_rent_is_due = {stake = 4},
     c_allen_domain_expansion = {stake = 8},
     c_allen_minesweeper = {stake = 8},
+    c_allen_inversion = {stake = 8},
     c_allen_blue_percent = {stake = 5},
 }
 
@@ -325,6 +326,28 @@ SMODS.Challenge {
             end
         end
     end
+}
+
+SMODS.Challenge {
+    key = 'inversion',
+    loc_txt = {
+        name = 'Inversion'
+    },
+    rules = {
+        custom = {
+            {id = 'gold_stake'},
+            {id = 'amphiapple'},
+        },
+        modifiers = {
+            {id = 'hands', value = 3},
+            {id = 'discards', value = 4},
+            {id = 'joker_slots', value = 2},
+            {id = 'consumable_slots', value = 5},
+        }
+    },
+    deck = {
+        type = 'Challenge Deck',
+    },
 }
 
 SMODS.Challenge {
