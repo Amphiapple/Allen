@@ -205,15 +205,7 @@ SMODS.Challenge {
     },
 
     calculate = function(self, context)
-        if context.buying_card and context.card.ability.set == 'Voucher' then
-            G.E_MANAGER:add_event(Event({
-                func = function()
-                    G.GAME.used_jokers[context.card.config.center_key] = nil
-                    G.GAME.used_vouchers[context.card.config.center_key] = nil
-                    return true
-                end
-            }))
-        elseif context.end_of_round and context.beat_boss then
+        if context.end_of_round and context.beat_boss then
             G.hand:change_size(-1)
             G.hand.config.card_limit = G.hand.config.card_limit-1
         end

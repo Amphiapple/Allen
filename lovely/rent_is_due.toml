@@ -1,0 +1,23 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = 1
+
+# Thirteen Cards disable drawing cards
+[[patches]]
+[patches.pattern]
+target = 'functions/common_events.lua'
+pattern = '''
+elseif _type == 'Voucher' then _pool[#_pool + 1] = "v_blank"
+'''
+position = 'at'
+payload = '''
+elseif _type == 'Voucher' then
+    if G.GAME.modifiers.rent_is_due then
+        _pool[#_pool + 1] = "v_paint_brush"
+    else
+        _pool[#_pool + 1] = "v_blank"
+    end
+'''
+match_indent = true
+
