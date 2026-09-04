@@ -3,7 +3,7 @@ version = "1.0.0"
 dump_lua = true
 priority = 1
 
-# Thirteen Cards disable drawing cards
+# Allow duplicate paint brushes
 [[patches]]
 [patches.pattern]
 target = 'functions/common_events.lua'

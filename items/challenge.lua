@@ -89,6 +89,27 @@ local static_cards = {
     {id = 'j_wee'},
     {id = 'j_caino'},
     {id = 'j_yorick'},
+
+    {id = 'j_stencil'},
+    {id = 'j_steel_joker'},
+    {id = 'j_abstract'},
+    {id = 'j_ice_cream'},
+    {id = 'j_blue_joker'},
+    {id = 'j_cloud_9'},
+    {id = 'j_turtle_bean'},
+    {id = 'j_erosion'},
+    {id = 'j_fortune_teller'},
+    {id = 'j_stone'},
+    {id = 'j_bull'},
+    {id = 'j_popcorn'},
+    {id = 'j_ramen'},
+    {id = 'j_selzer'},
+    {id = 'j_campfire'},
+    {id = 'j_swashbuckler'},
+    {id = 'j_throwback'},
+    {id = 'j_hit_the_road'},
+    {id = 'j_satellite'},
+    {id = 'j_bootstraps'},
 }
 
 SMODS.Challenge {
