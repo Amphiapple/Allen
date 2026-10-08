@@ -51,10 +51,10 @@ return {
 
             --special challenge rules
             ch_c_the_snap_1 = {
-                "Start with {C:attention}-1{} card slot and"
+                "Start with {C:red}-1{} card slot and"
             },
             ch_c_the_snap_2 = {
-                "{C:attention}-1{} booster slot available in the shop"
+                "{C:red}-1{} booster slot available in the shop"
             },
             ch_c_buy_now_pay_later_1 = {
                 "All {C:attention}Jokers{} are free, but become"

@@ -10,7 +10,7 @@ Challenge_stakes = {
 }
 
 SMODS.Challenge { --Joker
-    key = 'half',
+    key = 'joker',
     loc_txt = {
         name = 'You, Me, Gold Stake'
     },
@@ -33,7 +33,8 @@ SMODS.Challenge { --Half Joker
     rules = {
         custom = {
             {id = 'half'},
-            {id = 'the_snap'},
+            {id = 'the_snap_1'},
+            {id = 'the_snap_2'},
         },
         modifiers = {
             {id = 'hands', value = 2},
