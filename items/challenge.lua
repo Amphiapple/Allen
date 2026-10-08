@@ -1,70 +1,90 @@
 Challenge_stakes = {
-    c_allen_static = {stake = 6},
-    c_allen_buy_now_pay_later = {stake = 6},
-    c_allen_rent_is_due = {stake = 4},
-    c_allen_domain_expansion = {stake = 8},
-    c_allen_minesweeper = {stake = 8},
+    c_allen_credit_card = {stake = 6},
+    c_allen_supernova = {stake = 6},
+    c_allen_ride_the_bus = {stake = 8},
+    c_allen_turtle_bean = {stake = 4},
+    c_allen_perkeo = {stake = 8},
+    
     c_allen_inversion = {stake = 8},
     c_allen_blue_percent = {stake = 5},
 }
 
-local thirteen_cards = {
-    --extra played hands cards
-    {id = 'j_burglar'},
-    {id = 'v_grabber'},
-    {id = 'v_nacho_tong'},
-    --extra hand size cards
-    {id = 'j_juggler'},
-    {id = 'j_troubadour'},
-    {id = 'j_turtle_bean'},
-    {id = 'v_paint_brush'},
-    {id = 'v_palette'},
-}
-
-SMODS.Challenge {
-    key = 'thirteen_cards',
+SMODS.Challenge { --Joker
+    key = 'half',
     loc_txt = {
-        name = '13 Cards'
+        name = 'You, Me, Gold Stake'
     },
     rules = {
         custom = {
-            {id = 'thirteen_cards'},
-            {id = 'amphiapple'},
+            {id = 'joker'},
+            {id = 'gold_stake'},
+        },
+    },
+    deck = {
+        type = 'Challenge Deck',
+    },
+}
+
+SMODS.Challenge { --Half Joker
+    key = 'half',
+    loc_txt = {
+        name = 'The Snap'
+    },
+    rules = {
+        custom = {
+            {id = 'half'},
+            {id = 'the_snap'},
         },
         modifiers = {
-            {id = 'hand_size', value = 13},
-            {id = 'hands', value = 3},
-            {id = 'discards', value = 0},
-            {id = 'dollars', value = 13},
-        }
-    },
-    restrictions = {
-        banned_cards = thirteen_cards,
-        banned_tags = {
-            {id = 'tag_juggle'},
-        },
-        banned_other = {
-            {id = 'bl_water', type = 'blind'},
-            {id = 'bl_needle', type = 'blind'},
-            {id = 'bl_serpent', type = 'blind'},
+            {id = 'hands', value = 2},
+            {id = 'discards', value = 2},
+            {id = 'joker_slots', value = 3},
+            {id = 'consumable_slots', value = 1},
+            {id = 'dollars', value = 2},
         }
     },
     deck = {
         type = 'Challenge Deck',
     },
-    calculate = function(self, context)
-        if context.drawing_cards and #G.hand.cards == 0 and
-                not (G.STATE == G.STATES.TAROT_PACK or G.STATE == G.STATES.SPECTRAL_PACK or G.STATE == G.STATES.SMODS_BOOSTER_OPENED) and (G.GAME.current_round.hands_played > 0 or G.GAME.current_round.discards_used > 0) then
-            G.E_MANAGER:add_event(Event({
-                trigger = 'after',
-                func = function()
-                    G.STATE = G.STATES.GAME_OVER
-                    G.STATE_COMPLETE = false
-                    return true
-                end
-            }))
-        end
+    apply = function(self)
+        change_shop_size(-1)
+        SMODS.change_booster_limit(-1)
     end,
+}
+
+SMODS.Challenge { --Credit Card
+    key = 'credit_card',
+    loc_txt = {
+        name = 'Buy Now, Pay Later'
+    },
+    rules = {
+        custom = {
+            {id = 'credit_card'},
+            {id = 'purple_stake'},
+            {id = 'buy_now_pay_later_1'},
+            {id = 'buy_now_pay_later_2'},
+        },
+    },
+    restrictions = {
+        banned_cards = {
+            {id = 'j_campfire'}
+        }
+    },
+    deck = {
+        type = 'Challenge Deck',
+    },
+
+    calculate = function(self, context)
+        if context.modify_shop_card and context.card.ability.set == 'Joker' then
+            context.card.ability.couponed = true
+            recalc_all_costs()
+        elseif context.end_of_round and context.beat_boss then
+            for k, v in ipairs(G.jokers.cards) do
+                v:set_rental(true)
+                v:juice_up()
+            end
+        end
+    end
 }
 
 local static_cards = {
@@ -90,6 +110,7 @@ local static_cards = {
     {id = 'j_caino'},
     {id = 'j_yorick'},
 
+    --other scaling cards
     {id = 'j_stencil'},
     {id = 'j_steel_joker'},
     {id = 'j_abstract'},
@@ -112,15 +133,15 @@ local static_cards = {
     {id = 'j_bootstraps'},
 }
 
-SMODS.Challenge {
-    key = 'static',
+SMODS.Challenge { --Supernova
+    key = 'supernova',
     loc_txt = {
         name = 'Static'
     },
     rules = {
         custom = {
+            {id = 'supernova'},
             {id = 'purple_stake'},
-            {id = 'stevecraft28980'},
         },
     },
     restrictions = {
@@ -131,168 +152,18 @@ SMODS.Challenge {
     },
 }
 
-SMODS.Challenge {
-    key = 'buy_now_pay_later',
-    loc_txt = {
-        name = 'Buy Now, Pay Later'
-    },
-    rules = {
-        custom = {
-            {id = 'purple_stake'},
-            {id = 'buy_now_pay_later'},
-            {id = 'buy_now_pay_later_2'},
-            {id = 'rat_queen'},
-        },
-    },
-    restrictions = {
-        banned_cards = {
-            {id = 'j_campfire'}
-        }
-    },
-    deck = {
-        type = 'Challenge Deck',
-    },
-
-    calculate = function(self, context)
-        if context.modify_shop_card and context.card.ability.set == 'Joker' then
-            context.card.ability.couponed = true
-            recalc_all_costs()
-        elseif context.end_of_round and context.beat_boss then
-            for k, v in ipairs(G.jokers.cards) do
-                v:set_rental(true)
-                v:juice_up()
-            end
-        end
-    end
-}
-
-local rent_is_due_cards = {
-    --vouchers except paint brush
-    {id = 'v_overstock_norm'},
-    {id = 'v_overstock_plus'},
-    {id = 'v_clearance_sale'},
-    {id = 'v_liquidation'},
-    {id = 'v_hone'},
-    {id = 'v_glow_up'},
-    {id = 'v_reroll_surplus'},
-    {id = 'v_reroll_glut'},
-    {id = 'v_crystal_ball'},
-    {id = 'v_omen_globe'},
-    {id = 'v_telescope'},
-    {id = 'v_observatory'},
-    {id = 'v_grabber'},
-    {id = 'v_nacho_tong'},
-    {id = 'v_wasteful'},
-    {id = 'v_recyclomancy'},
-    {id = 'v_tarot_merchant'},
-    {id = 'v_tarot_tycoon'},
-    {id = 'v_planet_merchant'},
-    {id = 'v_planet_tycoon'},
-    {id = 'v_seed_money'},
-    {id = 'v_money_tree'},
-    {id = 'v_blank'},
-    {id = 'v_antimatter'},
-    {id = 'v_magic_trick'},
-    {id = 'v_illusion'},
-    {id = 'v_hieroglyph'},
-    {id = 'v_petroglyph'},
-    {id = 'v_directors_cut'},
-    {id = 'v_retcon'},
-    {id = 'v_palette'},
-}
-
-SMODS.Challenge {
-    key = 'rent_is_due',
-    loc_txt = {
-        name = 'Rent is Due'
-    },
-    rules = {
-        custom = {
-            {id = 'black_stake'},
-            {id = 'rent_is_due'},
-            {id = 'rent_is_due_2'},
-            {id = 'rent_is_due_3'},
-            {id = 'synfulness'},
-        },
-    },
-    restrictions = {
-        banned_cards = rent_is_due_cards,
-        banned_tags = {
-            {id = 'tag_voucher'}
-        }
-    },
-    deck = {
-        type = 'Yellow Deck',
-    },
-
-    calculate = function(self, context)
-        if context.end_of_round and context.beat_boss then
-            G.hand:change_size(-1)
-            G.hand.config.card_limit = G.hand.config.card_limit-1
-        end
-    end
-}
-
-SMODS.Challenge {
-    key = 'domain_expansion',
-    loc_txt = {
-        name = 'Domain Expansion'
-    },
-    rules = {
-        custom = {
-            {id = 'gold_stake'},
-            {id = 'domain_expansion'},
-            {id = 'mr_dell'},
-        },
-        modifiers = {
-            {id = 'joker_slots', value = 1},
-        }
-    },
-    restrictions = {
-        banned_cards = {
-            {id = 'v_antimatter'},
-        }
-    },
-    deck = {
-        type = 'Challenge Deck',
-    },
-
-    calculate = function(self, context)
-        if context.end_of_round and context.beat_boss then
-            G.E_MANAGER:add_event(Event({
-                trigger = 'after',
-                delay = 0.4,
-                func = function()
-                    local pool = {}
-                    for k, v in pairs(G.jokers.cards) do
-                        if v.ability.set == 'Joker' and (not v.edition) then
-                            table.insert(pool, v)
-                        end
-                    end
-                    if next(pool) then
-                        local eligible_card = pseudorandom_element(pool, pseudoseed('domain_expansion'))
-                        eligible_card:set_edition('e_negative', true)
-                        check_for_unlock({type = 'have_edition'})
-                    end
-                    return true
-                end
-            }))
-        end
-    end
-}
-
-SMODS.Challenge {
-    key = 'minesweeper',
+SMODS.Challenge { --Ride The Bus
+    key = 'ride_the_bus',
     loc_txt = {
         name = 'Minesweeper'
     },
     rules = {
         custom = {
-            {id = 'gold_stake'},
+            {id = 'ride_the_bus'},
             {id = 'abandoned_deck'},
-            {id = 'minesweeper'},
+            {id = 'gold_stake'},
+            {id = 'minesweeper_1'},
             {id = 'minesweeper_2'},
-            {id = 'synfulness'},
         },
     },
     jokers = {
@@ -341,6 +212,181 @@ SMODS.Challenge {
     end
 }
 
+local rent_is_due_cards = {
+    --vouchers except paint brush
+    {id = 'v_overstock_norm'},
+    {id = 'v_overstock_plus'},
+    {id = 'v_clearance_sale'},
+    {id = 'v_liquidation'},
+    {id = 'v_hone'},
+    {id = 'v_glow_up'},
+    {id = 'v_reroll_surplus'},
+    {id = 'v_reroll_glut'},
+    {id = 'v_crystal_ball'},
+    {id = 'v_omen_globe'},
+    {id = 'v_telescope'},
+    {id = 'v_observatory'},
+    {id = 'v_grabber'},
+    {id = 'v_nacho_tong'},
+    {id = 'v_wasteful'},
+    {id = 'v_recyclomancy'},
+    {id = 'v_tarot_merchant'},
+    {id = 'v_tarot_tycoon'},
+    {id = 'v_planet_merchant'},
+    {id = 'v_planet_tycoon'},
+    {id = 'v_seed_money'},
+    {id = 'v_money_tree'},
+    {id = 'v_blank'},
+    {id = 'v_antimatter'},
+    {id = 'v_magic_trick'},
+    {id = 'v_illusion'},
+    {id = 'v_hieroglyph'},
+    {id = 'v_petroglyph'},
+    {id = 'v_directors_cut'},
+    {id = 'v_retcon'},
+    {id = 'v_palette'},
+}
+
+SMODS.Challenge { --Turtle Bean
+    key = 'turtle_bean',
+    loc_txt = {
+        name = 'Rent is Due'
+    },
+    rules = {
+        custom = {
+            {id = 'turtle_bean'},
+            {id = 'black_stake'},
+            {id = 'rent_is_due_1'},
+            {id = 'rent_is_due_2'},
+            {id = 'rent_is_due_3'},
+        },
+    },
+    restrictions = {
+        banned_cards = rent_is_due_cards,
+        banned_tags = {
+            {id = 'tag_voucher'}
+        }
+    },
+    deck = {
+        type = 'Challenge Deck',
+    },
+
+    calculate = function(self, context)
+        if context.end_of_round and context.beat_boss then
+            G.hand:change_size(-1)
+            G.hand.config.card_limit = G.hand.config.card_limit-1
+        end
+    end
+}
+
+local thirteen_cards = {
+    --extra played hands cards
+    {id = 'j_burglar'},
+    {id = 'v_grabber'},
+    {id = 'v_nacho_tong'},
+    --extra hand size cards
+    {id = 'j_juggler'},
+    {id = 'j_troubadour'},
+    {id = 'j_turtle_bean'},
+    {id = 'v_paint_brush'},
+    {id = 'v_palette'},
+}
+
+SMODS.Challenge { --Troubadour
+    key = 'troubadour',
+    loc_txt = {
+        name = '13 Cards'
+    },
+    rules = {
+        custom = {
+            {id = 'troubadour'},
+            {id = 'thirteen_cards'},
+        },
+        modifiers = {
+            {id = 'hand_size', value = 13},
+            {id = 'hands', value = 3},
+            {id = 'discards', value = 0},
+            {id = 'dollars', value = 13},
+        }
+    },
+    restrictions = {
+        banned_cards = thirteen_cards,
+        banned_tags = {
+            {id = 'tag_juggle'},
+        },
+        banned_other = {
+            {id = 'bl_water', type = 'blind'},
+            {id = 'bl_needle', type = 'blind'},
+            {id = 'bl_serpent', type = 'blind'},
+        }
+    },
+    deck = {
+        type = 'Challenge Deck',
+    },
+    calculate = function(self, context)
+        if context.drawing_cards and #G.hand.cards == 0 and
+                not (G.STATE == G.STATES.TAROT_PACK or G.STATE == G.STATES.SPECTRAL_PACK or G.STATE == G.STATES.SMODS_BOOSTER_OPENED) and (G.GAME.current_round.hands_played > 0 or G.GAME.current_round.discards_used > 0) then
+            G.E_MANAGER:add_event(Event({
+                trigger = 'after',
+                func = function()
+                    G.STATE = G.STATES.GAME_OVER
+                    G.STATE_COMPLETE = false
+                    return true
+                end
+            }))
+        end
+    end,
+}
+
+SMODS.Challenge { --Perkeo
+    key = 'perkeo',
+    loc_txt = {
+        name = 'Domain Expansion'
+    },
+    rules = {
+        custom = {
+            {id = 'perkeo'},
+            {id = 'gold_stake'},
+            {id = 'domain_expansion_1'},
+            {id = 'domain_expansion_2'},
+        },
+        modifiers = {
+            {id = 'joker_slots', value = 1},
+        }
+    },
+    restrictions = {
+        banned_cards = {
+            {id = 'v_antimatter'},
+        }
+    },
+    deck = {
+        type = 'Challenge Deck',
+    },
+
+    calculate = function(self, context)
+        if context.end_of_round and context.beat_boss then
+            G.E_MANAGER:add_event(Event({
+                trigger = 'after',
+                delay = 0.4,
+                func = function()
+                    local pool = {}
+                    for k, v in pairs(G.jokers.cards) do
+                        if v.ability.set == 'Joker' and (not v.edition) then
+                            table.insert(pool, v)
+                        end
+                    end
+                    if next(pool) then
+                        local eligible_card = pseudorandom_element(pool, pseudoseed('domain_expansion'))
+                        eligible_card:set_edition('e_negative', true)
+                        check_for_unlock({type = 'have_edition'})
+                    end
+                    return true
+                end
+            }))
+        end
+    end
+}
+
 SMODS.Challenge {
     key = 'inversion',
     loc_txt = {
@@ -349,7 +395,6 @@ SMODS.Challenge {
     rules = {
         custom = {
             {id = 'gold_stake'},
-            {id = 'amphiapple'},
         },
         modifiers = {
             {id = 'hands', value = 3},
@@ -371,7 +416,6 @@ SMODS.Challenge {
     rules = {
         custom = {
             {id = 'mega_purple'},
-            {id = 'amphiapple'},
         },
     },
     restrictions = {
@@ -540,7 +584,7 @@ SMODS.Challenge {
         custom = {
             {id = 'blue_stake'},
             {id = 'blue_deck'},
-            {id = 'blue_percent'},
+            {id = 'blue_percent_1'},
             {id = 'blue_percent_2'},
         },
     },
