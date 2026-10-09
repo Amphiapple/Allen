@@ -13,7 +13,7 @@ SMODS.Atlas {
 }
 
 SMODS.Stake {
-    key = 'gold2',
+    key = 'golder',
     name = 'Golder Staker',
     atlas = 'Stake',
     pos = { x = 0, y = 0 },

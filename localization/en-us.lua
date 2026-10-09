@@ -1,7 +1,7 @@
 return {
     descriptions = {
         Stake = {
-            stake_allen_gold2 = {
+            stake_allen_golder = {
                 name = "Golder Staker",
                 text = {
                     '{C:red}+1{} Discard',
@@ -10,6 +10,16 @@ return {
                 }
             }
         },
+        Other = {
+            allen_golder_sticker = {
+                name = "Golder Sticker",
+                text = {
+                    'Used this Joker',
+                    'to win on {C:attention}Golder',
+                    '{C:attention}Stake{} difficulty',
+                }
+            },
+        }
     },
     misc = {
         v_text = {
