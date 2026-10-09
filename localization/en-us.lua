@@ -1,4 +1,16 @@
 return {
+    descriptions = {
+        Stake = {
+            stake_allen_gold2 = {
+                name = "Golder Staker",
+                text = {
+                    '{C:red}+1{} Discard',
+                    'Winning Ante increased to Ante {C:attention}10{}',
+                    '{s:0.8}Applies all previous Stakes{}'
+                }
+            }
+        },
+    },
     misc = {
         v_text = {
             --jokers

@@ -27,7 +27,7 @@ end
 
 local items = {
     'challenge',
-    'joker'
+    'stake',
 }
 
 for k, v in ipairs(items) do
