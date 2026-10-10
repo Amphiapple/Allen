@@ -37,8 +37,6 @@ SMODS.Challenge { --Half Joker
             {id = 'the_snap_2'},
         },
         modifiers = {
-            {id = 'hands', value = 2},
-            {id = 'discards', value = 2},
             {id = 'joker_slots', value = 3},
             {id = 'consumable_slots', value = 1},
             {id = 'dollars', value = 2},
