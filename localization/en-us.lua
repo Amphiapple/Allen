@@ -39,6 +39,9 @@ return {
             ch_c_ride_the_bus = {
                 "{C:attention}Ride The Bus'{} challenge"
             },
+            ch_c_ice_cream = {
+                "{C:attention}Ice Cream's{} challenge"
+            },
             ch_c_turtle_bean = {
                 "{C:attention}Turtle Bean's{} challenge"
             },
@@ -89,6 +92,9 @@ return {
             },
             ch_c_minesweeper_2 = {
                 "Lose run when {C:attention,T:j_ride_the_bus}Ride the Bus{} resets"
+            },
+            ch_c_meltdown = {
+                "Lose run when {C:attention,T:j_ice_cream}Ice Cream{} is eaten or removed"
             },
             ch_c_rent_is_due_1 = {
                 "All {C:attention}Vouchers{} are {C:attention,T:v_paint_brush}Paint Brush{}"
