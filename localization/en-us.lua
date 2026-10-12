@@ -105,6 +105,12 @@ return {
             ch_c_rent_is_due_3 = {
                 "hand size when {C:attention}Boss Blind{} is defeated"
             },
+            ch_c_dishonest_woodcutter_1 = {
+                "Create a free {C:attention}Joker{} the first time"
+            },
+            ch_c_dishonest_woodcutter_2 = {
+                "you sell a {C:attention}Joker{} each round"
+            },
             ch_c_thirteen_cards = {
                 "After round begins, draw no cards"
             },
