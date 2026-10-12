@@ -333,6 +333,8 @@ SMODS.Challenge { --Trading Card
     },
     jokers = {
         {id = 'j_credit_card'},
+        {id = 'j_credit_card'},
+        {id = 'j_credit_card'},
     },
     restrictions = {
         banned_cards = {
@@ -353,8 +355,9 @@ SMODS.Challenge { --Trading Card
     },
 
     calculate = function(self, context)
-        if context.selling_card and G.GAME.current_round.trade_available then
+        if context.selling_card and context.card.ability.set == 'Joker' and G.GAME.current_round.trade_available and #G.jokers.cards + G.GAME.joker_buffer <= G.jokers.config.card_limit then
             G.GAME.current_round.trade_available = false
+            G.GAME.joker_buffer = G.GAME.joker_buffer + 1
             G.E_MANAGER:add_event(Event({
                 trigger = 'after',
                 delay = 0.4,
@@ -364,6 +367,7 @@ SMODS.Challenge { --Trading Card
                     card.sell_cost = 0
                     card:add_to_deck()
                     G.jokers:emplace(card)
+                    G.GAME.joker_buffer = 0
                     return true
                 end
             }))
