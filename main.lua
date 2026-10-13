@@ -7,7 +7,6 @@ SMODS.Atlas({
 
 local functions = {
     'base',
-    'hook',
 }
 
 for k, v in ipairs(functions) do

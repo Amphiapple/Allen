@@ -19,8 +19,8 @@ SMODS.Blind {
     in_pool = function()
         return false
     end,
-    defeat = function(self)
-        if not self.disabled then
+    calculate = function(self, blind, context)
+        if context.end_of_round and not blind.disabled and not context.individual and not context.repetition then
             local eligible_jokers = {}
             for k, v in ipairs(G.jokers.cards) do
                 if not SMODS.is_eternal(v) then
@@ -38,6 +38,5 @@ SMODS.Blind {
                 }))
             end
         end
-        self.defeated = true
     end,
 }

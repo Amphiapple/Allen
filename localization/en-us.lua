@@ -116,7 +116,7 @@ return {
             },
 
             ch_c_critical_hit_1 = {
-                "All {C:attention}Boss Blinds{} are {C:attention,T:bl_allen_luchador}The Luchador{}"
+                "All {C:attention}Boss Blinds{} are {C:attention}The Luchador{}"
             },
             ch_c_critical_hit_2 = {
                 "Disable the current {C:attention}Boss Blind{} if score catches fire"

@@ -271,20 +271,11 @@ SMODS.Challenge { --Luchador
     deck = {
         type = 'Challenge Deck',
     },
-    apply = function(self)
-        G.GAME.perscribed_bosses = {}
-        G.GAME.perscribed_bosses[1] = 'bl_allen_luchador'
-        G.GAME.perscribed_bosses[2] = 'bl_allen_luchador'
-        G.GAME.perscribed_bosses[3] = 'bl_allen_luchador'
-        G.GAME.perscribed_bosses[4] = 'bl_allen_luchador'
-        G.GAME.perscribed_bosses[5] = 'bl_allen_luchador'
-        G.GAME.perscribed_bosses[6] = 'bl_allen_luchador'
-        G.GAME.perscribed_bosses[7] = 'bl_allen_luchador'
-        G.GAME.perscribed_bosses[8] = 'bl_allen_luchador'
-    end,
     calculate = function(self, context)
-        if context.final_scoring_step then
-            
+        if context.final_scoring_step and (hand_chips*mult)/G.GAME.blind.chips >= to_big(1) then
+            if G.GAME.blind and G.GAME.blind.boss and not G.GAME.blind.disabled then
+                G.GAME.blind:disable()
+            end
         end
     end
 }
