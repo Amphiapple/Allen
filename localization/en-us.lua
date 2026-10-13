@@ -1,5 +1,14 @@
 return {
     descriptions = {
+        Blind = {
+            bl_allen_luchador = {
+                name = 'The Luchador',
+                text = {
+                    'Destroy a random',
+                    'Joker when defeated',
+                }
+            },
+        },
         Stake = {
             stake_allen_golder = {
                 name = "Golder Staker",
@@ -42,11 +51,17 @@ return {
             ch_c_ice_cream = {
                 "{C:attention}Ice Cream's{} challenge"
             },
+            ch_c_luchador = {
+                "{C:attention}Luchador's{} challenge"
+            },
             ch_c_turtle_bean = {
                 "{C:attention}Turtle Bean's{} challenge"
             },
             ch_c_troubadour = {
                 "{C:attention}Troubadour's{} challenge"
+            },
+            ch_c_blueprint = {
+                "{C:attention}Blueprint's{} challenge"
             },
             ch_c_perkeo = {
                 "{C:attention}Perkeo's{} challenge"
@@ -81,21 +96,32 @@ return {
             ch_c_the_snap_2 = {
                 "{C:red}-1{} booster slot available in the shop"
             },
+
             ch_c_buy_now_pay_later_1 = {
                 "All {C:attention}Jokers{} are free, but become"
             },
             ch_c_buy_now_pay_later_2 = {
                 "{C:attention,T:rental}rental{} when {C:attention}Boss Blind{} is defeated"
             },
+
             ch_c_minesweeper_1 = {
                 "Add a random {C:attention}face{} card to your deck each hand played"
             },
             ch_c_minesweeper_2 = {
                 "Lose run when {C:attention,T:j_ride_the_bus}Ride the Bus{} resets"
             },
+
             ch_c_meltdown = {
                 "Lose run when {C:attention,T:j_ice_cream}Ice Cream{} is eaten or removed"
             },
+
+            ch_c_critical_hit_1 = {
+                "All {C:attention}Boss Blinds{} are {C:attention,T:bl_allen_luchador}The Luchador{}"
+            },
+            ch_c_critical_hit_2 = {
+                "Disable the current {C:attention}Boss Blind{} if score catches fire"
+            },
+
             ch_c_rent_is_due_1 = {
                 "All {C:attention}Vouchers{} are {C:attention,T:v_paint_brush}Paint Brush{}"
             },
@@ -105,15 +131,25 @@ return {
             ch_c_rent_is_due_3 = {
                 "hand size when {C:attention}Boss Blind{} is defeated"
             },
+
             ch_c_dishonest_woodcutter_1 = {
                 "Create a free {C:attention}Joker{} the first time"
             },
             ch_c_dishonest_woodcutter_2 = {
                 "you sell a {C:attention}Joker{} each round"
             },
+
             ch_c_thirteen_cards = {
                 "After round begins, draw no cards"
             },
+
+            ch_c_blue_percent_1 = {
+                "Must play only {C:clubs}Clubs{}, {C:attention}Bonus{}, {C:attention}Wild{}, {C:dark_edition}Foil{}, and {C:blue}Blue Seal{} cards"
+            },
+            ch_c_blue_percent_2 = {
+                "Must play every {C:attention}Small Blind{} and skip every {C:attention}Big Blind{}"
+            },
+
             ch_c_domain_expansion_1 = {
                 "Add {C:dark_edition}Negative{} to a random {C:attention}Joker{}"
             },
@@ -123,13 +159,7 @@ return {
             
             ch_c_mega_purple = {
                 "Required score scales extremely fast for each {C:attention}Ante{}"
-            },
-            ch_c_blue_percent_1 = {
-                "Must play only {C:clubs}Clubs{}, {C:attention}Bonus{}, {C:attention}Wild{}, {C:dark_edition}Foil{}, and {C:blue}Blue Seal{} cards"
-            },
-            ch_c_blue_percent_2 = {
-                "Must play every {C:attention}Small Blind{} and skip every {C:attention}Big Blind{}"
-            },
+            }
         },
     },
 }

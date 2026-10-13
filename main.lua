@@ -26,6 +26,7 @@ for k, v in ipairs(functions) do
 end
 
 local items = {
+    'blind',
     'challenge',
     'stake',
 }

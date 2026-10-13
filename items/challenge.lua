@@ -250,6 +250,45 @@ SMODS.Challenge { --Ice Cream
     end
 }
 
+SMODS.Challenge { --Luchador
+    key = 'luchador',
+    loc_txt = {
+        name = 'Critical Hit'
+    },
+    rules = {
+        custom = {
+            {id = 'luchador'},
+            {id = 'critical_hit_1'},
+            {id = 'critical_hit_2'},
+        },
+    },
+    restrictions = {
+        banned_cards = {
+            {id = 'j_luchador'},
+            {id = 'j_chicot'}
+        }
+    },
+    deck = {
+        type = 'Challenge Deck',
+    },
+    apply = function(self)
+        G.GAME.perscribed_bosses = {}
+        G.GAME.perscribed_bosses[1] = 'bl_allen_luchador'
+        G.GAME.perscribed_bosses[2] = 'bl_allen_luchador'
+        G.GAME.perscribed_bosses[3] = 'bl_allen_luchador'
+        G.GAME.perscribed_bosses[4] = 'bl_allen_luchador'
+        G.GAME.perscribed_bosses[5] = 'bl_allen_luchador'
+        G.GAME.perscribed_bosses[6] = 'bl_allen_luchador'
+        G.GAME.perscribed_bosses[7] = 'bl_allen_luchador'
+        G.GAME.perscribed_bosses[8] = 'bl_allen_luchador'
+    end,
+    calculate = function(self, context)
+        if context.final_scoring_step then
+            
+        end
+    end
+}
+
 local rent_is_due_cards = {
     --vouchers except paint brush
     {id = 'v_overstock_norm'},
@@ -435,101 +474,7 @@ SMODS.Challenge { --Troubadour
         end
     end,
 }
-
-SMODS.Challenge { --Perkeo
-    key = 'perkeo',
-    loc_txt = {
-        name = 'Domain Expansion'
-    },
-    rules = {
-        custom = {
-            {id = 'perkeo'},
-            {id = 'gold_stake'},
-            {id = 'domain_expansion_1'},
-            {id = 'domain_expansion_2'},
-        },
-        modifiers = {
-            {id = 'joker_slots', value = 1},
-        }
-    },
-    restrictions = {
-        banned_cards = {
-            {id = 'v_antimatter'},
-        }
-    },
-    deck = {
-        type = 'Challenge Deck',
-    },
-
-    calculate = function(self, context)
-        if context.end_of_round and context.beat_boss then
-            G.E_MANAGER:add_event(Event({
-                trigger = 'after',
-                delay = 0.4,
-                func = function()
-                    local pool = {}
-                    for k, v in pairs(G.jokers.cards) do
-                        if v.ability.set == 'Joker' and (not v.edition) then
-                            table.insert(pool, v)
-                        end
-                    end
-                    if next(pool) then
-                        local eligible_card = pseudorandom_element(pool, pseudoseed('domain_expansion'))
-                        eligible_card:set_edition('e_negative', true)
-                        check_for_unlock({type = 'have_edition'})
-                    end
-                    return true
-                end
-            }))
-        end
-    end
-}
-
-SMODS.Challenge {
-    key = 'inversion',
-    loc_txt = {
-        name = 'Inversion'
-    },
-    rules = {
-        custom = {
-            {id = 'gold_stake'},
-        },
-        modifiers = {
-            {id = 'hands', value = 3},
-            {id = 'discards', value = 4},
-            {id = 'joker_slots', value = 2},
-            {id = 'consumable_slots', value = 5},
-        }
-    },
-    deck = {
-        type = 'Challenge Deck',
-    },
-}
-
-SMODS.Challenge {
-    key = 'mega_purple_stake',
-    loc_txt = {
-        name = 'Mega Purple Stake'
-    },
-    rules = {
-        custom = {
-            {id = 'mega_purple'},
-        },
-    },
-    restrictions = {
-        banned_other = {
-            {id = 'bl_final_vessel', type = 'blind'},
-        }
-    },
-    deck = {
-        type = 'Challenge Deck',
-    },
-
-    apply = function(self)
-        G.GAME.modifiers.scaling = 3
-    end
-}
-
+        
 local blue_percent_cards = {
     --all jokers that are not significantly blue
     {id = 'j_joker'},
@@ -673,13 +618,14 @@ local blue_percent_cards = {
     {id = 'c_world'},
 }
 
-SMODS.Challenge {
-    key = 'blue_percent',
+SMODS.Challenge { --Blueprint
+    key = 'blueprint',
     loc_txt = {
         name = 'Blue%'
     },
     rules = {
         custom = {
+            {id = 'blueprint'},
             {id = 'blue_stake'},
             {id = 'blue_deck'},
             {id = 'blue_percent_1'},
@@ -744,4 +690,98 @@ SMODS.Challenge {
             end
         end
     end,
+}
+
+SMODS.Challenge { --Perkeo
+    key = 'perkeo',
+    loc_txt = {
+        name = 'Domain Expansion'
+    },
+    rules = {
+        custom = {
+            {id = 'perkeo'},
+            {id = 'gold_stake'},
+            {id = 'domain_expansion_1'},
+            {id = 'domain_expansion_2'},
+        },
+        modifiers = {
+            {id = 'joker_slots', value = 1},
+        }
+    },
+    restrictions = {
+        banned_cards = {
+            {id = 'v_antimatter'},
+        }
+    },
+    deck = {
+        type = 'Challenge Deck',
+    },
+
+    calculate = function(self, context)
+        if context.end_of_round and context.beat_boss then
+            G.E_MANAGER:add_event(Event({
+                trigger = 'after',
+                delay = 0.4,
+                func = function()
+                    local pool = {}
+                    for k, v in pairs(G.jokers.cards) do
+                        if v.ability.set == 'Joker' and (not v.edition) then
+                            table.insert(pool, v)
+                        end
+                    end
+                    if next(pool) then
+                        local eligible_card = pseudorandom_element(pool, pseudoseed('domain_expansion'))
+                        eligible_card:set_edition('e_negative', true)
+                        check_for_unlock({type = 'have_edition'})
+                    end
+                    return true
+                end
+            }))
+        end
+    end
+}
+
+SMODS.Challenge {
+    key = 'inversion',
+    loc_txt = {
+        name = 'Inversion'
+    },
+    rules = {
+        custom = {
+            {id = 'gold_stake'},
+        },
+        modifiers = {
+            {id = 'hands', value = 3},
+            {id = 'discards', value = 4},
+            {id = 'joker_slots', value = 2},
+            {id = 'consumable_slots', value = 5},
+        }
+    },
+    deck = {
+        type = 'Challenge Deck',
+    },
+}
+
+SMODS.Challenge {
+    key = 'mega_purple_stake',
+    loc_txt = {
+        name = 'Mega Purple Stake'
+    },
+    rules = {
+        custom = {
+            {id = 'mega_purple'},
+        },
+    },
+    restrictions = {
+        banned_other = {
+            {id = 'bl_final_vessel', type = 'blind'},
+        }
+    },
+    deck = {
+        type = 'Challenge Deck',
+    },
+
+    apply = function(self)
+        G.GAME.modifiers.scaling = 3
+    end
 }
