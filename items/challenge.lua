@@ -87,6 +87,88 @@ SMODS.Challenge { --Credit Card
     end
 }
 
+SMODS.Challenge { --Even Steven
+    key = 'even_steven',
+    loc_txt = {
+        name = 'Even Parity'
+    },
+    rules = {
+        custom = {
+            {id = 'even_steven'},
+            {id = 'even_parity'},
+        },
+    },
+    deck = {
+        type = 'Challenge Deck',
+    },
+
+    calculate = function(self, context)
+        if context.final_scoring_step and (hand_chips % 2 ~= 0 or mult % 2 ~= 0) then
+            hand_chips = mod_chips(0)
+            mult = mod_mult(0)
+            update_hand_text( { delay = 0 }, { chips = hand_chips, mult = mult } )
+			G.E_MANAGER:add_event(Event({
+				func = function()
+					play_sound("timpani", 1)
+					attention_text({
+						scale = 1.4,
+						text = "Not Even!",
+						hold = 0.45,
+						align = "cm",
+						offset = { x = 0, y = -2.7 },
+						major = G.play,
+					})
+					return true
+				end,
+			}))
+            delay(0.6)
+        end
+    end
+}
+
+SMODS.Challenge { --Odd Todd
+    key = 'odd_todd',
+    loc_txt = {
+        name = 'Odd Parity'
+    },
+    rules = {
+        custom = {
+            {id = 'odd_todd'},
+            {id = 'odd_parity'},
+        },
+    },
+    consumeables = {
+        {id = 'c_mercury'},
+        {id = 'c_saturn'}
+    },
+    deck = {
+        type = 'Challenge Deck',
+    },
+
+    calculate = function(self, context)
+        if context.final_scoring_step and hand_chips*mult % 2 ~= 1 then
+            hand_chips = mod_chips(0)
+            mult = mod_mult(0)
+            update_hand_text( { delay = 0 }, { chips = hand_chips, mult = mult } )
+			G.E_MANAGER:add_event(Event({
+				func = function()
+					play_sound("timpani", 1)
+					attention_text({
+						scale = 1.4,
+						text = "Not Odd!",
+						hold = 0.45,
+						align = "cm",
+						offset = { x = 0, y = -2.7 },
+						major = G.play,
+					})
+					return true
+				end,
+			}))
+            delay(0.6)
+        end
+    end
+}
+
 local static_cards = {
     --upwards scaling cards
     {id = 'j_ceremonial'},
@@ -249,7 +331,7 @@ SMODS.Challenge { --Ice Cream
         end
     end
 }
-
+--[[
 SMODS.Challenge { --Luchador
     key = 'luchador',
     loc_txt = {
@@ -271,14 +353,18 @@ SMODS.Challenge { --Luchador
     deck = {
         type = 'Challenge Deck',
     },
+    apply = function(self)
+        G.GAME.FORCE_BOSS = 'bl_allen_luchador'
+    end,
     calculate = function(self, context)
-        if context.final_scoring_step and (hand_chips*mult)/G.GAME.blind.chips >= to_big(1) then
+        if context.final_scoring_step and (hand_chips*hand_mult)/G.GAME.blind.chips >= to_big(1) then
             if G.GAME.blind and G.GAME.blind.boss and not G.GAME.blind.disabled then
                 G.GAME.blind:disable()
             end
         end
     end
 }
+]]
 
 local rent_is_due_cards = {
     --vouchers except paint brush

@@ -42,6 +42,12 @@ return {
             ch_c_credit_card = {
                 "{C:attention}Credit Card's{} challenge"
             },
+            ch_c_even_steven = {
+                "{C:attention}Even Steven's{} challenge"
+            },
+            ch_c_odd_todd = {
+                "{C:attention}Odd Todd's{} challenge"
+            },
             ch_c_supernova = {
                 "{C:attention}Supernova's{} challenge"
             },
@@ -102,6 +108,14 @@ return {
             },
             ch_c_buy_now_pay_later_2 = {
                 "{C:attention,T:rental}rental{} when {C:attention}Boss Blind{} is defeated"
+            },
+
+            ch_c_even_parity = {
+                "Score no chips if {C:blue}Chips{} or {C:red}Mult{} is not {C:attention}even{}"
+            },
+
+            ch_c_odd_parity = {
+                "Score no chips if hand score is not {C:attention}odd{}"
             },
 
             ch_c_minesweeper_1 = {
