@@ -1,5 +1,7 @@
 Challenge_stakes = {
     c_allen_credit_card = {stake = 6},
+    c_allen_even_steven = {stake = 8},
+    c_allen_odd_todd = {stake = 8},
     c_allen_supernova = {stake = 6},
     c_allen_ride_the_bus = {stake = 8},
     c_allen_turtle_bean = {stake = 4},
@@ -95,15 +97,19 @@ SMODS.Challenge { --Even Steven
     rules = {
         custom = {
             {id = 'even_steven'},
+            {id = 'gold_stake'},
             {id = 'even_parity'},
         },
+    },
+    consumeables = {
+        {id = 'c_strength'},
     },
     deck = {
         type = 'Challenge Deck',
     },
 
     calculate = function(self, context)
-        if context.final_scoring_step and (hand_chips % 2 ~= 0 or mult % 2 ~= 0) then
+        if context.final_scoring_step and mult % 2 ~= 0 then
             hand_chips = mod_chips(0)
             mult = mod_mult(0)
             update_hand_text( { delay = 0 }, { chips = hand_chips, mult = mult } )
@@ -134,19 +140,19 @@ SMODS.Challenge { --Odd Todd
     rules = {
         custom = {
             {id = 'odd_todd'},
+            {id = 'gold_stake'},
             {id = 'odd_parity'},
         },
     },
     consumeables = {
-        {id = 'c_mercury'},
-        {id = 'c_saturn'}
+        {id = 'c_strength'},
     },
     deck = {
         type = 'Challenge Deck',
     },
 
     calculate = function(self, context)
-        if context.final_scoring_step and hand_chips*mult % 2 ~= 1 then
+        if context.final_scoring_step and hand_chips % 2 ~= 1 then
             hand_chips = mod_chips(0)
             mult = mod_mult(0)
             update_hand_text( { delay = 0 }, { chips = hand_chips, mult = mult } )

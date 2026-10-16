@@ -111,11 +111,11 @@ return {
             },
 
             ch_c_even_parity = {
-                "Score no chips if {C:blue}Chips{} or {C:red}Mult{} is not {C:attention}even{}"
+                "Score no chips if {C:red}Mult{} is not {C:attention}even{}"
             },
 
             ch_c_odd_parity = {
-                "Score no chips if hand score is not {C:attention}odd{}"
+                "Score no chips if {C:blue}Chips{} is not {C:attention}odd{}"
             },
 
             ch_c_minesweeper_1 = {
