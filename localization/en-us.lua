@@ -57,6 +57,9 @@ return {
             ch_c_ice_cream = {
                 "{C:attention}Ice Cream's{} challenge"
             },
+            ch_c_superposition = {
+                "{C:attention}Superposition's{} challenge"
+            },
             ch_c_luchador = {
                 "{C:attention}Luchador's{} challenge"
             },
@@ -171,7 +174,7 @@ return {
                 "when {C:attention}Boss Blind{} is defeated"
             },
             
-            ch_c_mega_purple = {
+            ch_c_million = {
                 "Required score scales extremely fast for each {C:attention}Ante{}"
             }
         },

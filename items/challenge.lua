@@ -337,6 +337,29 @@ SMODS.Challenge { --Ice Cream
         end
     end
 }
+
+SMODS.Challenge { --Superposition
+    key = 'superposition',
+    loc_txt = {
+        name = 'Inversion'
+    },
+    rules = {
+        custom = {
+            {id = 'superposition'},
+            {id = 'gold_stake'},
+        },
+        modifiers = {
+            {id = 'hands', value = 3},
+            {id = 'discards', value = 4},
+            {id = 'joker_slots', value = 2},
+            {id = 'consumable_slots', value = 5},
+        }
+    },
+    deck = {
+        type = 'Challenge Deck',
+    },
+}
+
 --[[
 SMODS.Challenge { --Luchador
     key = 'luchador',
@@ -825,34 +848,13 @@ SMODS.Challenge { --Perkeo
 }
 
 SMODS.Challenge {
-    key = 'inversion',
+    key = 'million',
     loc_txt = {
-        name = 'Inversion'
+        name = 'Million Dollar Stake'
     },
     rules = {
         custom = {
-            {id = 'gold_stake'},
-        },
-        modifiers = {
-            {id = 'hands', value = 3},
-            {id = 'discards', value = 4},
-            {id = 'joker_slots', value = 2},
-            {id = 'consumable_slots', value = 5},
-        }
-    },
-    deck = {
-        type = 'Challenge Deck',
-    },
-}
-
-SMODS.Challenge {
-    key = 'mega_purple_stake',
-    loc_txt = {
-        name = 'Mega Purple Stake'
-    },
-    rules = {
-        custom = {
-            {id = 'mega_purple'},
+            {id = 'million'},
         },
     },
     restrictions = {
