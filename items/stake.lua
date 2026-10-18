@@ -27,7 +27,7 @@ SMODS.Stake {
     modifiers = function()
         G.GAME.starting_params.discards = G.GAME.starting_params.discards + 1
         G.GAME.win_ante = G.GAME.win_ante + 2
-        G.GAME.modifiers.gold2_stake = true
+        G.GAME.modifiers.golder_staker = true
     end
 
 

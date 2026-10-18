@@ -26,6 +26,7 @@ end
 
 local items = {
     'blind',
+    'joker',
     'challenge',
     'stake',
 }

@@ -3,7 +3,7 @@ version = "1.0.0"
 dump_lua = true
 priority = 1
 
-# mega purple stake requirement scaling
+# million dollar stake requirement scaling
 [[patches]]
 [patches.pattern]
 target = "functions/misc_functions.lua"
@@ -15,7 +15,7 @@ local amounts = {
 '''
 position = 'after'
 payload = '''
-if G.GAME.modifiers.mega_purple then
+if G.GAME.modifiers.million then
     amounts = {
         300,  1200,  5000,  18000,  60000,  180000,  450000,  1000000
     }

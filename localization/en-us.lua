@@ -9,6 +9,23 @@ return {
                 }
             },
         },
+        Joker = {
+            j_allen_safe = {
+                name = 'The Safe',
+                text = {
+                    'Play {C:attention}#1#{} more hands',
+                    'on {C:attention}To Do List{} to crack',
+                },
+            },
+            j_allen_safe_cracked = {
+                name = 'The Safe',
+                text = {
+                    '{X:mult,C:white}X#2#{} Mult',
+                    'Resets when {C:attention}Boss{}',
+                    'Blind{} is defeated'
+                }
+            },
+        },
         Stake = {
             stake_allen_golder = {
                 name = "Golder Staker",
@@ -60,11 +77,17 @@ return {
             ch_c_superposition = {
                 "{C:attention}Superposition's{} challenge"
             },
+            ch_c_to_do_list = {
+                "{C:attention}To Do List's{} challenge"
+            },
             ch_c_luchador = {
                 "{C:attention}Luchador's{} challenge"
             },
             ch_c_turtle_bean = {
                 "{C:attention}Turtle Bean's{} challenge"
+            },
+            ch_c_acrobat = {
+                "{C:attention}Acrobat's{} challenge"
             },
             ch_c_troubadour = {
                 "{C:attention}Troubadour's{} challenge"
@@ -132,6 +155,10 @@ return {
                 "Lose run when {C:attention,T:j_ice_cream}Ice Cream{} is eaten or removed"
             },
 
+            ch_c_safecracking = {
+                "{C:red}X5{C:attention} Boss Blind{} size"
+            },
+
             ch_c_critical_hit_1 = {
                 "All {C:attention}Boss Blinds{} are {C:attention}The Luchador{}"
             },
@@ -154,6 +181,10 @@ return {
             },
             ch_c_dishonest_woodcutter_2 = {
                 "you sell a {C:attention}Joker{} each round"
+            },
+
+            ch_c_last_stand = {
+                "Score no chips except on {C:attention}final hand{} of round"
             },
 
             ch_c_thirteen_cards = {

@@ -4,11 +4,11 @@ Challenge_stakes = {
     c_allen_odd_todd = {stake = 8},
     c_allen_supernova = {stake = 6},
     c_allen_ride_the_bus = {stake = 8},
+    c_allen_superposition = {stake = 8},
+    c_allen_to_do_list = {stake = 6},
     c_allen_turtle_bean = {stake = 4},
     c_allen_trading_card = {stake = 6},
     c_allen_perkeo = {stake = 8},
-
-    c_allen_inversion = {stake = 8},
     c_allen_blue_percent = {stake = 5},
 }
 
@@ -360,6 +360,27 @@ SMODS.Challenge { --Superposition
     },
 }
 
+SMODS.Challenge { --To Do List
+    key = 'to_do_list',
+    loc_txt = {
+        name = 'Safecracking'
+    },
+    rules = {
+        custom = {
+            {id = 'to_do_list'},
+            {id = 'purple_stake'},
+            {id = 'safecracking'}
+        },
+    },
+    jokers = {
+        {id = 'j_todo_list', eternal = true},
+        {id = 'j_allen_safe', eternal = true}
+    },
+    deck = {
+        type = 'Challenge Deck',
+    },
+}
+
 --[[
 SMODS.Challenge { --Luchador
     key = 'luchador',
@@ -522,6 +543,37 @@ SMODS.Challenge { --Trading Card
     end
 }
 
+SMODS.Challenge { --Acrobat
+    key = 'acrobat',
+    loc_txt = {
+        name = 'Last Stand'
+    },
+    rules = {
+        custom = {
+            {id = 'acrobat'},
+            {id = 'purple_stake'},
+            {id = 'last_resort'},
+        },
+    },
+    deck = {
+        type = 'Challenge Deck',
+    },
+    calculate = function(self, context)
+        if context.final_scoring_step and G.GAME.current_round.hands_left ~= 0 then
+            hand_chips = mod_chips(0)
+            mult = mod_mult(0)
+            update_hand_text( { delay = 0 }, { chips = hand_chips, mult = mult } )
+			G.E_MANAGER:add_event(Event({
+				func = function()
+					play_sound("timpani", 1)
+					return true
+				end,
+			}))
+            delay(0.6)
+        end
+    end,
+}
+
 local thirteen_cards = {
     --extra played hands cards
     {id = 'j_burglar'},
@@ -580,7 +632,7 @@ SMODS.Challenge { --Troubadour
         end
     end,
 }
-        
+
 local blue_percent_cards = {
     --all jokers that are not significantly blue
     {id = 'j_joker'},
