@@ -373,7 +373,7 @@ SMODS.Challenge { --To Do List
         },
     },
     jokers = {
-        {id = 'j_todo_list', eternal = true},
+        {id = 'j_todo_list', eternal = true, edition = 'negative'},
         {id = 'j_allen_safe', eternal = true}
     },
     deck = {
