@@ -1,4 +1,5 @@
 Challenge_stakes = {
+    c_allen_joker = {stake = 8},
     c_allen_credit_card = {stake = 6},
     c_allen_even_steven = {stake = 8},
     c_allen_odd_todd = {stake = 8},
@@ -7,9 +8,11 @@ Challenge_stakes = {
     c_allen_superposition = {stake = 8},
     c_allen_to_do_list = {stake = 6},
     c_allen_turtle_bean = {stake = 4},
-    c_allen_trading_card = {stake = 6},
+    c_allen_trading_card = {stake = 4},
+    c_allen_acrobat = {stake = 6},
+    c_allen_throwback = {stake = 6},
+    c_allen_blueprint = {stake = 5},
     c_allen_perkeo = {stake = 8},
-    c_allen_blue_percent = {stake = 5},
 }
 
 SMODS.Challenge { --Joker
@@ -374,7 +377,7 @@ SMODS.Challenge { --To Do List
     },
     jokers = {
         {id = 'j_todo_list', eternal = true, edition = 'negative'},
-        {id = 'j_allen_safe', eternal = true, edition = 'negative'}
+        {id = 'j_allen_safe', eternal = true}
     },
     deck = {
         type = 'Challenge Deck',
@@ -631,6 +634,26 @@ SMODS.Challenge { --Troubadour
             }))
         end
     end,
+}
+
+SMODS.Challenge { --Throwback
+    key = 'throwback',
+    loc_txt = {
+        name = 'Old But Gold'
+    },
+    rules = {
+        custom = {
+            {id = 'throwback'},
+            {id = 'purple_stake'},
+            {id = 'old_but_gold'},
+        },
+        modifiers = {
+            {id = 'hand_size', value = 7},
+        }
+    },
+    deck = {
+        type = 'Challenge Deck',
+    },
 }
 
 local blue_percent_cards = {

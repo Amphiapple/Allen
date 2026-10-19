@@ -18,5 +18,9 @@ end
 if self.ability.set == "Voucher" and G.GAME.modifiers.rent_is_due then
     self.cost = self.cost + 5 * (G.GAME.round_resets.ante - 1)
 end
+--old but gold booster costs
+if self.area == G.shop_booster and G.GAME.modifiers.old_but_gold then
+    self.cost = self.cost + G.GAME.round_resets.ante - 1
+end
 '''
 match_indent = true

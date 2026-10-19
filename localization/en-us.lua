@@ -92,6 +92,9 @@ return {
             ch_c_troubadour = {
                 "{C:attention}Troubadour's{} challenge"
             },
+            ch_c_throwback = {
+                "{C:attention}Throwback's{} challenge"
+            },
             ch_c_blueprint = {
                 "{C:attention}Blueprint's{} challenge"
             },
@@ -189,6 +192,10 @@ return {
 
             ch_c_thirteen_cards = {
                 "After round begins, draw no cards"
+            },
+
+            ch_c_old_but_gold = {
+                "Booster Packs cost {C:money}$1{} more each {C:attention}Ante{}"
             },
 
             ch_c_blue_percent_1 = {
