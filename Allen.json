@@ -9,7 +9,7 @@
 	"badge_colour": "33DD99",
 	"badge_text_colour": "F0F0F0",
 	"display_name": "Allen",
-	"version": "1.0",
+	"version": "0.1.3",
 	"dependencies": ["Steamodded (>=1.0.0~BETA-1814a)", "Lovely (>=0.9.0)"],
 	"conflicts": [],
 	"provides": [],
