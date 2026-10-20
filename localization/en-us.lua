@@ -98,6 +98,15 @@ return {
             ch_c_blueprint = {
                 "{C:attention}Blueprint's{} challenge"
             },
+            ch_c_trio = {
+                "{C:attention}Trio's{} challenge"
+            },
+            ch_c_drivers_license = {
+                "{C:attention}Driver's License's{} challenge"
+            },
+            ch_c_wee = {
+                "{C:attention}Wee Joker's{} challenge"
+            },
             ch_c_perkeo = {
                 "{C:attention}Perkeo's{} challenge"
             },
@@ -205,6 +214,19 @@ return {
                 "Must play every {C:attention}Small Blind{} and skip every {C:attention}Big Blind{}"
             },
 
+            ch_c_traffic_jam_1 = {
+                "Score is affected by {C:attention}Enhanced cards{} held in hand"
+            },
+            ch_c_traffic_jam_2 = {
+                "{C:attention}3~4 Enhanced cards{}: {X:mult,C:white}X1.5{} Mult"
+            },
+            ch_c_traffic_jam_3 = {
+                "{C:attention}2{} or {C:attention}5 Enhanced cards{}: {X:mult,C:white}X1{} Mult"
+            },
+            ch_c_traffic_jam_4 = {
+                "{C:attention}0~1{} or {C:attention}6+ Enhanced cards{}: {X:mult,C:white}X0.5{} Mult"
+            },
+
             ch_c_domain_expansion_1 = {
                 "Add {C:dark_edition}Negative{} to a random {C:attention}Joker{}"
             },
@@ -214,6 +236,10 @@ return {
             
             ch_c_million = {
                 "Required score scales extremely fast for each {C:attention}Ante{}"
+            },
+
+            ch_c_no_negative = {
+                "{C:dark_edition}Negative{C:attention} Jokers{} no longer appear"
             }
         },
     },

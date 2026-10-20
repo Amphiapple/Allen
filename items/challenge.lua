@@ -9,9 +9,10 @@ Challenge_stakes = {
     c_allen_to_do_list = {stake = 6},
     c_allen_turtle_bean = {stake = 4},
     c_allen_trading_card = {stake = 4},
-    c_allen_acrobat = {stake = 6},
+    c_allen_acrobat = {stake = 4},
     c_allen_throwback = {stake = 6},
     c_allen_blueprint = {stake = 5},
+    c_allen_drivers_license = {stake = 8},
     c_allen_perkeo = {stake = 8},
 }
 
@@ -377,7 +378,7 @@ SMODS.Challenge { --To Do List
     },
     jokers = {
         {id = 'j_todo_list', eternal = true, edition = 'negative'},
-        {id = 'j_allen_safe', eternal = true}
+        {id = 'j_allen_safe', eternal = true, edition = 'negative'}
     },
     deck = {
         type = 'Challenge Deck',
@@ -554,7 +555,7 @@ SMODS.Challenge { --Acrobat
     rules = {
         custom = {
             {id = 'acrobat'},
-            {id = 'purple_stake'},
+            {id = 'black_stake'},
             {id = 'last_resort'},
         },
     },
@@ -871,6 +872,68 @@ SMODS.Challenge { --Blueprint
             end
         end
     end,
+}
+
+SMODS.Challenge { --Driver's License
+    key = 'drivers_license',
+    loc_txt = {
+        name = 'Traffic Jam'
+    },
+    rules = {
+        custom = {
+            {id = 'drivers_license'},
+            {id = 'gold_stake'},
+            {id = 'traffic_jam_1'},
+            {id = 'traffic_jam_2'},
+            {id = 'traffic_jam_3'},
+            {id = 'traffic_jam_4'},
+        },
+    },
+    deck = {
+        type = 'Challenge Deck',
+        cards = {
+            {s='D',r='2',e='m_stone'},{s='D',r='3',},{s='D',r='4',},{s='D',r='5',},{s='D',r='6',e='m_glass'},{s='D',r='7',},{s='D',r='8',},{s='D',r='9',},{s='D',r='T',},{s='D',r='J',},{s='D',r='Q',},{s='D',r='K',},{s='D',r='A',},
+            {s='C',r='2',},{s='C',r='3',e='m_lucky'},{s='C',r='4',},{s='C',r='5',},{s='C',r='6',},{s='C',r='7',e='m_wild'},{s='C',r='8',},{s='C',r='9',},{s='C',r='T',},{s='C',r='J',},{s='C',r='Q',},{s='C',r='K',},{s='C',r='A',},
+            {s='H',r='2',},{s='H',r='3',},{s='H',r='4',e='m_gold'},{s='H',r='5',},{s='H',r='6',},{s='H',r='7',},{s='H',r='8',e='m_mult'},{s='H',r='9',},{s='H',r='T',},{s='H',r='J',},{s='H',r='Q',},{s='H',r='K',},{s='H',r='A',},
+            {s='S',r='2',},{s='S',r='3',},{s='S',r='4',},{s='S',r='5',e='m_steel'},{s='S',r='6',},{s='S',r='7',},{s='S',r='8',},{s='S',r='9',e='m_bonus'},{s='S',r='T',},{s='S',r='J',},{s='S',r='Q',},{s='S',r='K',},{s='S',r='A',},
+        }
+    },
+
+    calculate = function(self, context)
+        if context.final_scoring_step then
+            local count = 0
+            for k, v in ipairs(G.hand.cards) do
+                if v.config.center ~= G.P_CENTERS.c_base then
+                    count = count + 1
+                end
+            end
+            local Xmult
+            if count == 3 or count == 4 then
+                Xmult = 1.5
+            elseif count == 2 or count == 5 then
+                Xmult = 1
+            else
+                Xmult = 0.5
+            end
+            mult = mod_mult(mult * Xmult)
+            update_hand_text({ delay = 0 }, { mult = mult })
+            G.E_MANAGER:add_event(Event({
+                func = function()
+                    play_sound("multhit2", 1)
+                    attention_text({
+                        scale = 1.4,
+                        text = "Traffic!",
+                        color = G.C.MULT,
+                        hold = 0.45,
+                        align = "cm",
+                        offset = { x = 0, y = -2.7 },
+                        major = G.play,
+                    })
+                    return true
+                end,
+            }))
+        end
+    end
 }
 
 SMODS.Challenge { --Perkeo
