@@ -996,21 +996,29 @@ SMODS.Challenge { --Driver's License
                 end
             end
             local Xmult
+            local temp_sound
+            local temp_text
             if count == 3 or count == 4 then
                 Xmult = 1.5
+                temp_sound = "multhit2"
+                temp_text = "Safe!"
             elseif count == 2 or count == 5 then
                 Xmult = 1
+                temp_sound = "multhit1"
+                temp_text = "Close!"
             else
                 Xmult = 0.5
+                temp_sound = "timpani"
+                temp_text = "Danger!"
             end
             mult = mod_mult(mult * Xmult)
             update_hand_text({ delay = 0 }, { mult = mult })
             G.E_MANAGER:add_event(Event({
                 func = function()
-                    play_sound("multhit2", 1)
+                    play_sound(temp_sound, 1)
                     attention_text({
                         scale = 1.4,
-                        text = "Traffic!",
+                        text = temp_text,
                         color = G.C.MULT,
                         hold = 0.45,
                         align = "cm",
