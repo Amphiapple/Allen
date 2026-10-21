@@ -101,11 +101,11 @@ return {
             ch_c_trio = {
                 "{C:attention}Trio's{} challenge"
             },
-            ch_c_drivers_license = {
-                "{C:attention}Driver's License's{} challenge"
-            },
             ch_c_wee = {
                 "{C:attention}Wee Joker's{} challenge"
+            },
+            ch_c_drivers_license = {
+                "{C:attention}Driver's License's{} challenge"
             },
             ch_c_perkeo = {
                 "{C:attention}Perkeo's{} challenge"
@@ -212,6 +212,13 @@ return {
             },
             ch_c_blue_percent_2 = {
                 "Must play every {C:attention}Small Blind{} and skip every {C:attention}Big Blind{}"
+            },
+
+            ch_c_wee_1 = {
+                "Score no chips if {C:attention}poker hand{} is not stronger"
+            },
+            ch_c_wee_2 = {
+                "than last scored {C:attention}poker hand{} in the round"
             },
 
             ch_c_traffic_jam_1 = {
