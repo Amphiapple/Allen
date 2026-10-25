@@ -1,3 +1,3 @@
 Fixes:
 
-Joker's challenge is correctly on Gold Stake
+Last Stand challenge description added

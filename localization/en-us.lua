@@ -104,6 +104,9 @@ return {
             ch_c_wee = {
                 "{C:attention}Wee Joker's{} challenge"
             },
+            ch_c_order = {
+                "{C:attention}The Order's{} challenge"
+            },
             ch_c_drivers_license = {
                 "{C:attention}Driver's License's{} challenge"
             },
@@ -128,6 +131,9 @@ return {
             },
             ch_c_purple_stake = {
                 "Challenge is played on {C:purple}Purple Stake{}"
+            },
+            ch_c_orange_stake = {
+                "Challenge is played on {C:attention}Orange Stake{}"
             },
             ch_c_gold_stake = {
                 "Challenge is played on {C:gold}Gold Stake{}"
@@ -219,6 +225,13 @@ return {
             },
             ch_c_big_2_2 = {
                 "than last scored {C:attention}poker hand{} in the round"
+            },
+
+            ch_c_hypothermia_1 = {
+                "{C:attention}Jokers{} cannot be moved during blinds"
+            },
+            ch_c_hypothermia_2 = {
+                "Debuff all {C:attention}Jokers{} left in the same position"
             },
 
             ch_c_traffic_jam_1 = {
