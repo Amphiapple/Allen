@@ -86,6 +86,12 @@ return {
             ch_c_turtle_bean = {
                 "{C:attention}Turtle Bean's{} challenge"
             },
+            ch_c_trading_card = {
+                "{C:attention}Trading Card's{} challenge"
+            },
+            ch_c_popcorn = {
+                "{C:attention}Popcorn's{} challenge"
+            },
             ch_c_acrobat = {
                 "{C:attention}Acrobat's{} challenge"
             },
