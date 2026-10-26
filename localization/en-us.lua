@@ -123,8 +123,11 @@ return {
             },
 
             --stake rules
+            ch_c_green_stake = {
+                "Challenge is played on {C:green}Green Stake{}"
+            },
             ch_c_black_stake = {
-                "Challenge is played on Black Stake"
+                "Challenge is played on {C:default}Black Stake{}"
             },
             ch_c_blue_stake = {
                 "Challenge is played on {C:blue}Blue Stake{}"
@@ -201,6 +204,13 @@ return {
                 "you sell a {C:attention}Joker{} each round"
             },
 
+            ch_c_short_lived_1 = {
+                "All {C:attention}Jokers{} are {C:attention,T:perishable}Perishable{}"
+            },
+            ch_c_short_lived_2 = {
+                "Leftmost {C:attention}Joker{} perishes {X:attention,C:white}X3{} as fast"
+            },
+            
             ch_c_last_stand = {
                 "Score no chips except on {C:attention}final hand{} of round"
             },
