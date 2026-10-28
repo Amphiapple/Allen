@@ -59,6 +59,9 @@ return {
             ch_c_credit_card = {
                 "{C:attention}Credit Card's{} challenge"
             },
+            ch_c_chaos = {
+                "{C:attention}Chaos the Clown's{} challenge"
+            },
             ch_c_even_steven = {
                 "{C:attention}Even Steven's{} challenge"
             },
@@ -79,6 +82,9 @@ return {
             },
             ch_c_to_do_list = {
                 "{C:attention}To Do List's{} challenge"
+            },
+            ch_c_square = {
+                "{C:attention}Square Joker's{} challenge"
             },
             ch_c_luchador = {
                 "{C:attention}Luchador's{} challenge"
@@ -163,6 +169,10 @@ return {
                 "{C:attention,T:rental}rental{} when {C:attention}Boss Blind{} is defeated"
             },
 
+            ch_c_unrollenting = {
+                "{C:green}Reroll{} cost never resets"
+            },
+
             ch_c_even_parity = {
                 "Score no chips if {C:red}Mult{} is not {C:attention}even{}"
             },
@@ -184,6 +194,13 @@ return {
 
             ch_c_safecracking = {
                 "{C:red}X5{C:attention} Boss Blind{} size"
+            },
+
+            ch_c_root_sum_square_1 = {
+                "{X:edition,C:inactive}^2{} Mult before cards are scored"
+            },
+            ch_c_root_sum_square_2 = {
+                "{X:edition,C:inactive}^0.5{} Mult when calculating score"
             },
 
             ch_c_critical_hit_1 = {

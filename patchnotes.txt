@@ -1,3 +1,4 @@
 Fixes:
 
+Dishonest Woodcutter joker description added
 Last Stand challenge description added

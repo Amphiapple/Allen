@@ -1,6 +1,7 @@
 Challenge_stakes = {
     c_allen_joker = {stake = 8},
     c_allen_credit_card = {stake = 6},
+    c_allen_chaos = {stake = 8},
     c_allen_even_steven = {stake = 8},
     c_allen_odd_todd = {stake = 8},
     c_allen_supernova = {stake = 6},
@@ -94,6 +95,32 @@ SMODS.Challenge { --Credit Card
     end
 }
 
+SMODS.Challenge { --Chaos the Clown
+    key = 'chaos',
+    loc_txt = {
+        name = 'Unrollenting'
+    },
+    rules = {
+        custom = {
+            {id = 'chaos'},
+            {id = 'gold_stake'},
+            {id = 'unrollenting'},
+        },
+    },
+    jokers = {
+        {id = 'j_chaos'},
+    },
+    deck = {
+        type = 'Challenge Deck',
+    },
+
+    calculate = function(self, context)
+        if context.ending_shop then
+            G.GAME.round_resets.reroll_cost = G.GAME.round_resets.reroll_cost + G.GAME.current_round.reroll_cost_increase
+        end
+    end
+}
+
 SMODS.Challenge { --Even Steven
     key = 'even_steven',
     loc_txt = {
@@ -115,9 +142,6 @@ SMODS.Challenge { --Even Steven
 
     calculate = function(self, context)
         if context.final_scoring_step and mult % 2 ~= 0 then
-            hand_chips = mod_chips(0)
-            mult = mod_mult(0)
-            update_hand_text( { delay = 0 }, { chips = hand_chips, mult = mult } )
 			G.E_MANAGER:add_event(Event({
 				func = function()
 					play_sound("timpani", 1)
@@ -132,7 +156,9 @@ SMODS.Challenge { --Even Steven
 					return true
 				end,
 			}))
-            delay(0.6)
+            return{
+                Xmult = 0
+            }
         end
     end
 }
@@ -158,9 +184,6 @@ SMODS.Challenge { --Odd Todd
 
     calculate = function(self, context)
         if context.final_scoring_step and hand_chips % 2 ~= 1 then
-            hand_chips = mod_chips(0)
-            mult = mod_mult(0)
-            update_hand_text( { delay = 0 }, { chips = hand_chips, mult = mult } )
 			G.E_MANAGER:add_event(Event({
 				func = function()
 					play_sound("timpani", 1)
@@ -175,7 +198,9 @@ SMODS.Challenge { --Odd Todd
 					return true
 				end,
 			}))
-            delay(0.6)
+            return{
+                Xmult = 0
+            }
         end
     end
 }
@@ -384,6 +409,64 @@ SMODS.Challenge { --To Do List
     deck = {
         type = 'Challenge Deck',
     },
+}
+
+SMODS.Challenge { --Square Joker
+    key = 'square',
+    loc_txt = {
+        name = 'Root Sum Square'
+    },
+    rules = {
+        custom = {
+            {id = 'square'},
+            {id = 'root_sum_square_1'},
+            {id = 'root_sum_square_2'}
+        },
+    },
+    deck = {
+        type = 'Challenge Deck',
+    },
+    calculate = function(self, context)
+        if context.initial_scoring_step then
+            mult = mod_mult(mult ^ 2)
+            update_hand_text( { delay = 0 }, { chips = hand_chips, mult = mult } )
+            G.E_MANAGER:add_event(Event({
+                func = function()
+                    play_sound('gong', 0.94, 0.3)
+                    play_sound('gong', 0.94*1.5, 0.2)
+                    attention_text({
+                        scale = 1.4,
+                        text = "Square!",
+                        hold = 0.45,
+                        align = "cm",
+                        offset = { x = 0, y = -2.7 },
+                        major = G.play,
+                    })
+                    return true
+                end,
+            }))
+            delay(0.6)
+        elseif context.final_scoring_step then
+            mult = mod_mult(mult ^ 0.5)
+            update_hand_text( { delay = 0 }, { chips = hand_chips, mult = mult } )
+            G.E_MANAGER:add_event(Event({
+                func = function()
+                    play_sound('gong', 0.94, 0.3)
+                    play_sound('gong', 0.94*1.5, 0.2)
+                    attention_text({
+                        scale = 1.4,
+                        text = "Sq. Root!",
+                        hold = 0.45,
+                        align = "cm",
+                        offset = { x = 0, y = -2.7 },
+                        major = G.play,
+                    })
+                    return true
+                end,
+            }))
+            delay(0.6)
+        end
+    end
 }
 
 --[[
@@ -605,16 +688,15 @@ SMODS.Challenge { --Acrobat
     },
     calculate = function(self, context)
         if context.final_scoring_step and G.GAME.current_round.hands_left ~= 0 then
-            hand_chips = mod_chips(0)
-            mult = mod_mult(0)
-            update_hand_text( { delay = 0 }, { chips = hand_chips, mult = mult } )
 			G.E_MANAGER:add_event(Event({
 				func = function()
 					play_sound("timpani", 1)
 					return true
 				end,
 			}))
-            delay(0.6)
+            return{
+                Xmult = 0
+            }
         end
     end,
 }
@@ -974,9 +1056,6 @@ SMODS.Challenge { --Wee Joker
     calculate = function(self, context)
         if context.final_scoring_step then
             if G.GAME.wee_hand and G.GAME.wee_handname and not is_stronger_hand(context.scoring_name, G.GAME.wee_handname, context.scoring_hand, G.GAME.wee_hand) then
-                hand_chips = mod_chips(0)
-                mult = mod_mult(0)
-                update_hand_text( { delay = 0 }, { chips = hand_chips, mult = mult } )
                 G.E_MANAGER:add_event(Event({
                     func = function()
                         play_sound("timpani", 1)
@@ -991,7 +1070,9 @@ SMODS.Challenge { --Wee Joker
                         return true
                     end,
                 }))
-                delay(0.6)
+                return{
+                    Xmult = 0
+                }
             else
                 G.GAME.wee_handname = context.scoring_name
                 G.GAME.wee_hand = context.scoring_hand
@@ -1091,24 +1172,22 @@ SMODS.Challenge { --Driver's License
                     count = count + 1
                 end
             end
-            local Xmult
+            local temp_Xmult
             local temp_sound
             local temp_text
             if count == 3 or count == 4 then
-                Xmult = 1.5
+                temp_Xmult = 1.5
                 temp_sound = "multhit2"
                 temp_text = "Safe!"
             elseif count == 2 or count == 5 then
-                Xmult = 1
+                temp_Xmult = 1
                 temp_sound = "multhit1"
                 temp_text = "Close!"
             else
-                Xmult = 0.5
+                temp_Xmult = 0.5
                 temp_sound = "timpani"
                 temp_text = "Danger!"
             end
-            mult = mod_mult(mult * Xmult)
-            update_hand_text({ delay = 0 }, { mult = mult })
             G.E_MANAGER:add_event(Event({
                 func = function()
                     play_sound(temp_sound, 1)
@@ -1124,6 +1203,9 @@ SMODS.Challenge { --Driver's License
                     return true
                 end,
             }))
+            return{
+                Xmult = temp_Xmult
+            }
         end
     end
 }
