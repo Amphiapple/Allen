@@ -65,3 +65,49 @@ SMODS.Joker { --Safecracking
         end
     end
 }
+
+SMODS.Joker { --Student Loans
+    key = 'loan_shark',
+    name = 'Loan Shark',
+	atlas = 'Joker',
+	pos = { x = 10, y = 4 },
+    rarity = 3,
+	cost = 8,
+    blueprint_compat = false,
+    in_pool = function(self, args)
+        return false
+    end,
+    config = {
+        extra = { bankrupt = 15 } --Variables: bankrupt = max amount of debt
+    },
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra.bankrupt } }
+    end,
+    add_to_deck = function(self, card, from_debuff)
+        G.GAME.bankrupt_at = G.GAME.bankrupt_at - card.ability.extra.bankrupt
+    end,
+    remove_from_deck = function(self, card, from_debuff)
+        G.GAME.bankrupt_at = G.GAME.bankrupt_at + card.ability.extra.bankrupt
+    end,
+    calculate = function(self, card, context)
+        if context.setting_blind and G.GAME.dollars < 0 and not card.getting_sliced and not context.blueprint then
+            card.ability.extra_value = card.ability.extra_value + G.GAME.dollars + (G.GAME.dollar_buffer or 0)
+            card:set_cost()
+            G.E_MANAGER:add_event(Event({
+                trigger = 'after',
+                func = function()
+                    G.GAME.dollar_buffer = 0
+                    return true
+                end
+            }))
+            return {
+                dollars = -(G.GAME.dollars + (G.GAME.dollar_buffer or 0)),
+                func = function()
+                    G.GAME.dollar_buffer = (G.GAME.dollar_buffer or 0) - G.GAME.dollars
+                    return true
+                end,
+                colour = G.C.MONEY
+            }
+        end
+    end
+}

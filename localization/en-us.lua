@@ -25,6 +25,14 @@ return {
                     'Blind{} is defeated'
                 }
             },
+            j_allen_loan_shark = {
+                name = 'Loan Shark',
+                text = {
+                    'Go up to {C:red}-$#1#{} in debt',
+                    'When {C:attention}Blind{} is selected,',
+                    'transfer debt to sell value',
+                },
+            },
         },
         Stake = {
             stake_allen_golder = {
@@ -85,6 +93,9 @@ return {
             },
             ch_c_square = {
                 "{C:attention}Square Joker's{} challenge"
+            },
+            ch_c_vagabond = {
+                "{C:attention}Vagabond's{} challenge"
             },
             ch_c_luchador = {
                 "{C:attention}Luchador's{} challenge"
@@ -201,6 +212,10 @@ return {
             },
             ch_c_root_sum_square_2 = {
                 "{X:edition,C:inactive}^0.5{} Mult when calculating score"
+            },
+
+            ch_c_student_loans = {
+                "Must be {C:red}-$400000{} in debt at the end of ante {C:attention}8{}"
             },
 
             ch_c_critical_hit_1 = {
