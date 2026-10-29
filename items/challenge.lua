@@ -483,6 +483,10 @@ SMODS.Challenge { --Vagabond
     jokers = {
         {id = 'j_allen_loan_shark'},
     },
+    vouchers = {
+        {id = 'v_tarot_merchant'},
+        {id = 'v_tarot_tycoon'},
+    },
     deck = {
         type = 'Challenge Deck',
     },
