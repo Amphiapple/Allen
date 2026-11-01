@@ -7,7 +7,7 @@ priority = 1
 [[patches]]
 [patches.pattern]
 target = 'card.lua'
-pattern = "if self.area and self.ability.couponed and (self.area == G.shop_jokers or self.area == G.shop_booster) then self.cost = 0 end"
+pattern = "if self.ability.rental then self.cost = 1 end"
 position = 'after'
 payload = '''
 --buy now pay later sell costs
@@ -15,12 +15,8 @@ if self.ability.set == "Joker" and G.GAME.modifiers.buy_now_pay_later then
     self.sell_cost = 0
 end
 --rent is due voucher costs
-if self.ability.set == "Voucher" and G.GAME.modifiers.rent_is_due then
+if self.ability.set == "Voucher" and G.GAME.modifiers.rent_is_due_1 then
     self.cost = self.cost + 5 * (G.GAME.round_resets.ante - 1)
-end
---old but gold booster costs
-if self.area == G.shop_booster and G.GAME.modifiers.old_but_gold then
-    self.cost = self.cost + G.GAME.round_resets.ante - 1
 end
 '''
 match_indent = true

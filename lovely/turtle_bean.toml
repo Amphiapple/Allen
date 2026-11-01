@@ -13,7 +13,7 @@ elseif _type == 'Voucher' then _pool[#_pool + 1] = "v_blank"
 position = 'at'
 payload = '''
 elseif _type == 'Voucher' then
-    if G.GAME.modifiers.rent_is_due then
+    if G.GAME.modifiers.rent_is_due_1 then
         _pool[#_pool + 1] = "v_paint_brush"
     else
         _pool[#_pool + 1] = "v_blank"

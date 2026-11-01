@@ -1,4 +1,9 @@
+Changes:
+
+- Odd Todd challenge Strength Tarot > Negative Splash Joker
+- Acrobat challenge Black Stake > White Stake
+- Wee Joker challenge White Stake > Black Stake
+
 Fixes:
 
-Dishonest Woodcutter joker description added
-Last Stand challenge description added
+- Turtle Bean and Throwback challenges correctly increases prices in the shop

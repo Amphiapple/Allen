@@ -10,9 +10,9 @@ Challenge_stakes = {
     c_allen_to_do_list = {stake = 6},
     c_allen_turtle_bean = {stake = 4},
     c_allen_trading_card = {stake = 4},
-    c_allen_acrobat = {stake = 4},
     c_allen_throwback = {stake = 6},
     c_allen_blueprint = {stake = 5},
+    c_allen_wee = {stake = 4},
     c_allen_order = {stake = 6},
     c_allen_drivers_license = {stake = 8},
     c_allen_perkeo = {stake = 8},
@@ -175,8 +175,8 @@ SMODS.Challenge { --Odd Todd
             {id = 'odd_parity'},
         },
     },
-    consumeables = {
-        {id = 'c_strength'},
+    jokers = {
+        {id = 'j_splash', edition = 'negative'},
     },
     deck = {
         type = 'Challenge Deck',
@@ -710,7 +710,6 @@ SMODS.Challenge { --Acrobat
     rules = {
         custom = {
             {id = 'acrobat'},
-            {id = 'black_stake'},
             {id = 'last_stand'},
         },
     },
@@ -801,6 +800,7 @@ SMODS.Challenge { --Throwback
             {id = 'throwback'},
             {id = 'purple_stake'},
             {id = 'old_but_gold'},
+            {id = 'booster_ante_scaling'},
         },
         modifiers = {
             {id = 'hand_size', value = 7},
@@ -1076,6 +1076,7 @@ SMODS.Challenge { --Wee Joker
     rules = {
         custom = {
             {id = 'wee'},
+            {id = 'black_stake'},
             {id = 'big_2_1'},
             {id = 'big_2_2'},
         },
