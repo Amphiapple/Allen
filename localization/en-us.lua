@@ -235,6 +235,10 @@ return {
                 "hand size when {C:attention}Boss Blind{} is defeated"
             },
 
+            ch_c_joker_juggling = {
+                "Flips and shuffles all {C:attention}Jokers{} each hand played"
+            },
+
             ch_c_dishonest_woodcutter_1 = {
                 "Create a free {C:attention}Joker{} the first time"
             },
