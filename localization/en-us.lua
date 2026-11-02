@@ -258,6 +258,22 @@ return {
             ch_c_short_lived_2 = {
                 "Leftmost {C:attention}Joker{} perishes {X:attention,C:white}X3{} as fast"
             },
+
+            ch_c_type_advantage_1 = {
+                "{C:attention,T:j_ancient}Ancient Joker{} has extra effects"
+            },
+            ch_c_type_advantage_2 = {
+                "{C:spades}Spades: {C:chips}+25{} chips, {C:hearts}Hearts{} give {C:blue}-50{} chips"
+            },
+            ch_c_type_advantage_3 = {
+                "{C:hearts}Hearts: {X:mult,C:white}X1.25{} Mult, {C:clubs}Clubs{} give {X:mult,C:white}X0.75{} Mult"
+            },
+            ch_c_type_advantage_4 = {
+                "{C:clubs}Clubs: {C:mult}+3{} Mult, {C:diamonds}Diamonds{} give {C:red}-7{} Mult"
+            },
+            ch_c_type_advantage_5 = {
+                "{C:diamonds}Diamonds:{} earn {C:money}$1{}, {C:spades}Spades{} lose {C:money}$2{}"
+            },
             
             ch_c_last_stand = {
                 "Score no chips except on {C:attention}final hand{} of round"
