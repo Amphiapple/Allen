@@ -85,6 +85,9 @@ return {
             ch_c_ice_cream = {
                 "{C:attention}Ice Cream's{} challenge"
             },
+            ch_c_dna = {
+                "{C:attention}DNA's{} challenge"
+            },
             ch_c_superposition = {
                 "{C:attention}Superposition's{} challenge"
             },
@@ -102,6 +105,9 @@ return {
             },
             ch_c_turtle_bean = {
                 "{C:attention}Turtle Bean's{} challenge"
+            },
+            ch_c_juggler = {
+                "{C:attention}Juggler's{} challenge"
             },
             ch_c_trading_card = {
                 "{C:attention}Trading Card's{} challenge"

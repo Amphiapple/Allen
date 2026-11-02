@@ -1,3 +1,8 @@
+Additions:
+
+- Juggler's challenge
+
+
 Changes:
 
 - Odd Todd challenge Strength Tarot > Negative Splash Joker
