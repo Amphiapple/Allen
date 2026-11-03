@@ -97,6 +97,9 @@ return {
             ch_c_square = {
                 "{C:attention}Square Joker's{} challenge"
             },
+            ch_c_seance = {
+                "{C:attention}Séance's{} challenge"
+            },
             ch_c_vagabond = {
                 "{C:attention}Vagabond's{} challenge"
             },
@@ -106,9 +109,12 @@ return {
             ch_c_turtle_bean = {
                 "{C:attention}Turtle Bean's{} challenge"
             },
+            ch_c_to_the_moon = {
+                "{C:attention}To The Moon's{} challenge"
+            },
             ch_c_juggler = {
                 "{C:attention}Juggler's{} challenge"
-            },
+            },  
             ch_c_trading_card = {
                 "{C:attention}Trading Card's{} challenge"
             },
@@ -138,6 +144,9 @@ return {
             },
             ch_c_drivers_license = {
                 "{C:attention}Driver's License's{} challenge"
+            },
+            ch_c_chicot = {
+                "{C:attention}Chicot's{} challenge"
             },
             ch_c_perkeo = {
                 "{C:attention}Perkeo's{} challenge"
@@ -220,6 +229,16 @@ return {
                 "{X:edition,C:inactive}^0.5{} Mult when calculating score"
             },
 
+            ch_c_spiritual_energy_1 = {
+                "Increase base blind size by {C:red}X0.2{} at end of round"
+            },
+            ch_c_spiritual_energy_2 = {
+                "Decrease base blind size by {C:red}X0.5{C:inactive} (min. {C:red}X1{C:inactive}){}"
+            },
+            ch_c_spiritual_energy_3 = {
+                "if poker hand is a {C:attention}Straight Flush{}"
+            },
+
             ch_c_student_loans = {
                 "Must be {C:red}-$400000{} in debt at the end of ante {C:attention}8{}"
             },
@@ -239,6 +258,10 @@ return {
             },
             ch_c_rent_is_due_3 = {
                 "hand size when {C:attention}Boss Blind{} is defeated"
+            },
+
+            ch_c_million_dollar_stake = {
+                "Required score scales extremely fast for each {C:attention}Ante{}"
             },
 
             ch_c_joker_juggling = {
@@ -328,9 +351,6 @@ return {
                 "when {C:attention}Boss Blind{} is defeated"
             },
             
-            ch_c_million = {
-                "Required score scales extremely fast for each {C:attention}Ante{}"
-            },
 
             ch_c_no_negative = {
                 "{C:dark_edition}Negative{C:attention} Jokers{} no longer appear"

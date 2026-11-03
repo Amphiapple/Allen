@@ -8,7 +8,9 @@ Challenge_stakes = {
     c_allen_ride_the_bus = {stake = 8},
     c_allen_superposition = {stake = 8},
     c_allen_to_do_list = {stake = 6},
+    c_allen_seance = {stake = 6},
     c_allen_turtle_bean = {stake = 4},
+    c_allen_to_the_moon = {stake = 8},
     c_allen_juggler = {stake = 6},
     c_allen_trading_card = {stake = 4},
     c_allen_ancient = {stake = 8},
@@ -471,6 +473,43 @@ SMODS.Challenge { --Square Joker
     end
 }
 
+SMODS.Challenge { --Seance
+    key = 'seance',
+    loc_txt = {
+        name = 'Spiritual Energy'
+    },
+    rules = {
+        custom = {
+            {id = 'seance'},
+            {id = 'purple_stake'},
+            {id = 'spiritual_energy_1'},
+            {id = 'spiritual_energy_2'},
+            {id = 'spiritual_energy_3'},
+        },
+    },
+    deck = {
+        type = 'Challenge Deck',
+    },
+    apply = function(self)
+        G.GAME.seance_energy = 1
+    end,
+    calculate = function(self, context)
+        if context.before and next(context.poker_hands['Straight Flush']) then
+            local temp_energy = G.GAME.seance_energy
+            if G.GAME.seance_energy < 1.5 then
+                G.GAME.seance_energy = 1
+            else
+                G.GAME.seance_energy = G.GAME.seance_energy - 0.5
+            end
+            return {
+                xblindsize = G.GAME.seance_energy / (temp_energy)
+            }
+        elseif context.end_of_round and not context.individual and not context.repetition then
+            G.GAME.seance_energy = G.GAME.seance_energy + 0.2
+        end
+    end
+}
+
 SMODS.Challenge { --Vagabond
     key = 'vagabond',
     loc_txt = {
@@ -716,7 +755,7 @@ SMODS.Challenge { --Trading Card
                     return true
                 end
             }))
-        elseif context.end_of_round then
+        elseif context.end_of_round and not context.individual and not context.repetition then
             G.GAME.current_round.trade_available = true
         end
     end
@@ -1372,6 +1411,27 @@ SMODS.Challenge { --Driver's License
     end
 }
 
+SMODS.Challenge { --To The Moon
+    key = 'to_the_moon',
+    loc_txt = {
+        name = 'Million Dollar Stake'
+    },
+    rules = {
+        custom = {
+            {id = 'to_the_moon'},
+            {id = 'gold_stake'},
+            {id = 'million_dollar_stake'},
+        },
+    },
+    deck = {
+        type = 'Challenge Deck',
+    },
+
+    apply = function(self)
+        G.GAME.modifiers.scaling = 3
+    end
+}
+
 SMODS.Challenge { --Perkeo
     key = 'perkeo',
     loc_txt = {
@@ -1418,29 +1478,5 @@ SMODS.Challenge { --Perkeo
                 end
             }))
         end
-    end
-}
-
-SMODS.Challenge {
-    key = 'million',
-    loc_txt = {
-        name = 'Million Dollar Stake'
-    },
-    rules = {
-        custom = {
-            {id = 'million'},
-        },
-    },
-    restrictions = {
-        banned_other = {
-            {id = 'bl_final_vessel', type = 'blind'},
-        }
-    },
-    deck = {
-        type = 'Challenge Deck',
-    },
-
-    apply = function(self)
-        G.GAME.modifiers.scaling = 3
     end
 }

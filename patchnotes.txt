@@ -1,13 +1,16 @@
 Additions:
 
+- Seance's challenge
 - Juggler's challenge
-
+- Ancient Joker's challenge
 
 Changes:
 
 - Odd Todd challenge Strength Tarot > Negative Splash Joker
 - Acrobat challenge Black Stake > White Stake
 - Wee Joker challenge White Stake > Black Stake
+- Million Dollar Stake White Stake > Gold Stake
+- Million Dollar Stake is now To The Moon's challenge
 
 Fixes:
 

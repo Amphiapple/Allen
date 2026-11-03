@@ -3,7 +3,7 @@ version = "1.0.0"
 dump_lua = true
 priority = 1
 
-# Change boss blind size
+# Change blind sizes
 [[patches]]
 [patches.pattern]
 target = "blind.lua"
@@ -12,6 +12,9 @@ position = 'after'
 payload = '''
 if G.GAME.modifiers.safecracking and self.boss then
     self.chips = self.chips * 5
+end
+if G.GAME.modifiers.spiritual_energy_1 then
+    self.chips = self.chips * (G.GAME.seance_energy or 1)
 end
 '''
 match_indent = true
@@ -24,6 +27,9 @@ position = 'after'
 payload = '''
 if G.GAME.modifiers.safecracking and type == 'Boss' then
     blind_amt = blind_amt * 5
+end
+if G.GAME.modifiers.spiritual_energy_1 then
+    blind_amt = blind_amt * (G.GAME.seance_energy or 1)
 end
 '''
 match_indent = true
