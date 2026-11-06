@@ -139,6 +139,9 @@ return {
             ch_c_wee = {
                 "{C:attention}Wee Joker's{} challenge"
             },
+            ch_c_seeing_double = {
+                "{C:attention}Seeing Double's{} challenge"
+            },
             ch_c_order = {
                 "{C:attention}The Order's{} challenge"
             },
@@ -161,6 +164,9 @@ return {
             },
 
             --stake rules
+            ch_c_red_stake = {
+                "Challenge is played on {C:red}Red Stake{}"
+            },
             ch_c_green_stake = {
                 "Challenge is played on {C:green}Green Stake{}"
             },
@@ -322,6 +328,13 @@ return {
             },
             ch_c_big_2_2 = {
                 "than last scored {C:attention}poker hand{} in the round"
+            },
+
+            ch_c_haunted_hands_1 = {
+                "Destroy a random {C:attention}Joker{} if"
+            },
+            ch_c_haunted_hands_2 = {
+                "{C:attention}poker hand{} has been played this {C:attention}Ante{}"
             },
 
             ch_c_hypothermia_1 = {

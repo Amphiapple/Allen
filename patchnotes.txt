@@ -3,6 +3,7 @@ Additions:
 - Seance's challenge
 - Juggler's challenge
 - Ancient Joker's challenge
+- Seeing Double's challenge
 
 Changes:
 

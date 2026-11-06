@@ -22,3 +22,11 @@ function recalc_all_costs()
         end)
     }))
 end
+
+--Change hand UI color function
+function Allen.get_poker_hand_color(handname)
+    if G.GAME.modifiers.haunted_hands_1 and G.GAME.seeing_double_hands[handname] then
+        return darken(G.C.BLIND_SIZE, 0.1)
+    end
+    return darken(G.C.JOKER_GREY, 0.1)
+end
