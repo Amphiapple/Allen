@@ -114,7 +114,10 @@ return {
             },
             ch_c_juggler = {
                 "{C:attention}Juggler's{} challenge"
-            },  
+            },
+            ch_c_drunkard = {
+                "{C:attention}Drunkard's{} challenge"
+            },
             ch_c_trading_card = {
                 "{C:attention}Trading Card's{} challenge"
             },
@@ -272,6 +275,10 @@ return {
 
             ch_c_joker_juggling = {
                 "Flips and shuffles all {C:attention}Jokers{} each hand played"
+            },
+
+            ch_c_alcoholism = {
+                "Randomizes {C:attention}Jokers'{} sprites and disables tooltips"
             },
 
             ch_c_dishonest_woodcutter_1 = {

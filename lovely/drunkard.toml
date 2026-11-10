@@ -1,0 +1,19 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = 1
+
+# Disables tooptips
+[[patches]]
+[patches.pattern]
+target = 'game.lua'
+pattern = "nuGC(nil, nil, true)"
+position = 'after'
+payload = '''
+if G.GAME.modifiers.alcoholism then
+    G.debug_tooltip_toggle = true
+else
+    G.debug_tooltip_toggle = false
+end
+'''
+match_indent = true
