@@ -6,7 +6,7 @@ SMODS.Atlas {
     atlas_table = 'ANIMATION_ATLAS',
     frames = 1,
 }
-
+--[[
 SMODS.Blind {
     key = 'luchador',
     atlas = 'Blind',
@@ -40,3 +40,4 @@ SMODS.Blind {
         end
     end,
 }
+]]

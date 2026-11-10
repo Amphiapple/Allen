@@ -542,6 +542,7 @@ SMODS.Challenge { --Vagabond
     end
 }
 
+--[[
 SMODS.Challenge { --Luchador
     key = 'luchador',
     loc_txt = {
@@ -550,6 +551,7 @@ SMODS.Challenge { --Luchador
     rules = {
         custom = {
             {id = 'luchador'},
+            {id = 'black_stake'},
             {id = 'critical_hit_1'},
             {id = 'critical_hit_2'},
         },
@@ -563,9 +565,6 @@ SMODS.Challenge { --Luchador
     deck = {
         type = 'Challenge Deck',
     },
-    apply = function(self)
-        G.GAME.FORCE_BOSS = 'bl_allen_luchador'
-    end,
     calculate = function(self, context)
         if context.final_scoring_step and (hand_chips*mult)/G.GAME.blind.chips >= to_big(1) then
             if G.GAME.blind and G.GAME.blind.boss and not G.GAME.blind.disabled then
@@ -574,6 +573,7 @@ SMODS.Challenge { --Luchador
         end
     end
 }
+]]
 
 local rent_is_due_cards = {
     --vouchers except paint brush
