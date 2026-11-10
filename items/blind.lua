@@ -6,7 +6,7 @@ SMODS.Atlas {
     atlas_table = 'ANIMATION_ATLAS',
     frames = 1,
 }
---[[
+
 SMODS.Blind {
     key = 'luchador',
     atlas = 'Blind',
@@ -14,7 +14,7 @@ SMODS.Blind {
     dollars = 5,
     mult = 2,
     boss = { min = 1 },
-    boss_colour = HEX("94D708"),
+    boss_colour = HEX("009cfd"),
 
     in_pool = function()
         return false
@@ -40,4 +40,3 @@ SMODS.Blind {
         end
     end,
 }
-]]

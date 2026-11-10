@@ -542,7 +542,6 @@ SMODS.Challenge { --Vagabond
     end
 }
 
---[[
 SMODS.Challenge { --Luchador
     key = 'luchador',
     loc_txt = {
@@ -568,14 +567,13 @@ SMODS.Challenge { --Luchador
         G.GAME.FORCE_BOSS = 'bl_allen_luchador'
     end,
     calculate = function(self, context)
-        if context.final_scoring_step and (hand_chips*hand_mult)/G.GAME.blind.chips >= to_big(1) then
+        if context.final_scoring_step and (hand_chips*mult)/G.GAME.blind.chips >= to_big(1) then
             if G.GAME.blind and G.GAME.blind.boss and not G.GAME.blind.disabled then
                 G.GAME.blind:disable()
             end
         end
     end
 }
-]]
 
 local rent_is_due_cards = {
     --vouchers except paint brush
