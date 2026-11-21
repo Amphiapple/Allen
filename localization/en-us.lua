@@ -91,7 +91,7 @@ return {
             ch_c_superposition = {
                 "{C:attention}Superposition's{} challenge"
             },
-            ch_c_to_do_list = {
+            ch_c_todo_list = {
                 "{C:attention}To Do List's{} challenge"
             },
             ch_c_square = {
@@ -118,7 +118,7 @@ return {
             ch_c_drunkard = {
                 "{C:attention}Drunkard's{} challenge"
             },
-            ch_c_trading_card = {
+            ch_c_trading = {
                 "{C:attention}Trading Card's{} challenge"
             },
             ch_c_popcorn = {

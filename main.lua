@@ -1,4 +1,6 @@
-Allen = {}
+Allen = {
+    Challenge_stakes = {}
+}
 
 SMODS.Atlas({
 	key = "modicon",
@@ -7,44 +9,189 @@ SMODS.Atlas({
 	py = 32,
 })
 
-local functions = {
-    'base',
-    'hook',
+local files = {
+    functions = {
+        list = {
+            'base',
+            'hook',
+        },
+        dir = 'functions/'
+    },
+    items = {
+        list = {
+            'blind',
+            'joker',
+            'stake',
+        },
+        dir = 'items/'
+    },
+    challenges = {
+        list = {
+            'joker',
+            --'greedy_joker',
+            --'lusty_joker',
+            --'wrathful_joker',
+            --'gluttenous_joker',
+            --'jolly',
+            --'zany',
+            --'mad',
+            --'crazy',
+            --'droll',
+            --'sly',
+            --'wily',
+            --'clever',
+            --'devious',
+            --'crafty',
+            'half',
+            --'stencil',
+            --'four_fingers',
+            --'mime',
+            'credit_card',
+            --'ceremonial',
+            --'banner',
+            --'mystic_summit',
+            --'marble',
+            --'loyalty_card',
+            --'8_ball',
+            --'misprint',
+            --'dusk',
+            --'raised_fist',
+            'chaos',
+            --'fibonacci',
+            --'steel_joker',
+            --'scary_face',
+            --'abstract',
+            --'delayed_grat',
+            --'hack',
+            --'pareidolia',
+            --'gros_michel',
+            'even_steven',
+            'odd_todd',
+            --'scholar',
+            --'business',
+            'supernova',
+            'ride_the_bus',
+            --'space',
+            --'egg',
+            --'burglar',
+            --'blackboard',
+            --'runner',
+            'ice_cream',
+            --'dna',
+            --'splash',
+            --'blue_joker',
+            --'sixth_sense',
+            --'constellation',
+            --'hiker',
+            --'faceless',
+            --'green_joker',
+            'superposition',
+            'todo_list',
+            --'cavendish',
+            --'card_sharp',
+            --'red_card',
+            --'madness',
+            'square',
+            'seance',
+            --'riff_raff',
+            --'vampire',
+            --'shortcut',
+            --'hologram',
+            'vagabond',
+            --'baron',
+            --'cloud_9',
+            --'rocket',
+            --'obelisk',
+            --'midas_mask',
+            --'luchador',
+            --'photograph',
+            --'gift',
+            'turtle_bean',
+            --'erosion',
+            --'reserved_parking',
+            --'mail',
+            'to_the_moon',
+            --'hallucination',
+            --'fortune_teller',
+            'juggler',
+            'drunkard',
+            --'stone',
+            --'golden',
+            --'lucky_cat',
+            --'baseball',
+            --'bull',
+            --'diet_cola',
+            'trading',
+            --'flash',
+            'popcorn',
+            --'trousers',
+            'ancient',
+            --'ramen',
+            --'walkie_talkie',
+            --'selzer',
+            --'castle',
+            --'smiley',
+            --'campfire',
+            --'ticket',
+            --'mr_bones',
+            'acrobat',
+            --'sock_and_buskin',
+            --'swashbuckler',
+            'troubadour',
+            --'certificate',
+            --'smeared',
+            'throwback',
+            --'hanging_chad',
+            --'rough_gem',
+            --'bloodstone',
+            --'arrowhead',
+            --'onyx_agate',
+            --'glass',
+            --'ring_master',
+            --'flower_pot',
+            'blueprint',
+            'wee',
+            --'merry_andy',
+            --'oops',
+            --'idol',
+            'seeing_double',
+            --'matador',
+            --'hit_the_road',
+            --'duo',
+            --'trio',
+            --'family',
+            'order',
+            --'tribe',
+            --'stuntman',
+            --'invisible',
+            --'brainstorm',
+            --'satellite',
+            --'shoot_the_moon',
+            'drivers_license',
+            --'cartomancer',
+            --'astronomer',
+            --'burnt',
+            --'bootstraps',
+            --'caino',
+            --'triboulet',
+            --'yorick',
+            --'chicot',
+            'perkeo'
+        },
+        dir = 'challenges/'
+    }
 }
 
-for k, v in ipairs(functions) do
-    local success, error_msg = pcall(function()
-        local init, error = SMODS.load_file("functions/" .. v .. ".lua")
-        if not error then
-            if init then
-                init()
-            end
-            sendDebugMessage("Loaded module: " .. v)
-        end
-    end)
-    if not success then
-        sendErrorMessage("Error in module " .. v .. ": " .. error_msg)
-    end
-end
-
-local items = {
-    'blind',
-    'joker',
-    'challenge',
-    'stake',
+local load_order = {
+    'functions',
+    'items',
+    'challenges'
 }
 
-for k, v in ipairs(items) do
-    local success, error_msg = pcall(function()
-        local init, error = SMODS.load_file("items/" .. v .. ".lua")
-        if not error then
-            if init then
-                init()
-            end
-            sendDebugMessage("Loaded module: " .. v)
+for _, folder in pairs(load_order) do
+    if files[folder] then
+        for _, name in ipairs(files[folder].list) do
+            assert(SMODS.load_file(files[folder].dir .. name .. ".lua"))()
         end
-    end)
-    if not success then
-        sendErrorMessage("Error in module " .. v .. ": " .. error_msg)
     end
 end
