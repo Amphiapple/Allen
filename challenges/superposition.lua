@@ -1,4 +1,4 @@
-Allen.Challenge_stakes.c_allen_superposition = 8
+Allen.Challenge_stakes.c_allen_superposition = 4
 
 SMODS.Challenge { --Superposition
     key = 'superposition',

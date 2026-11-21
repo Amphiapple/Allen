@@ -9,6 +9,7 @@ Additions:
 Changes:
 
 - Odd Todd challenge Strength Tarot > Negative Splash Joker
+- Superposition challenge Gold Stake > White Stake
 - Acrobat challenge Black Stake > White Stake
 - Wee Joker challenge White Stake > Black Stake
 - Million Dollar Stake White Stake > Gold Stake
