@@ -142,6 +142,9 @@ return {
             ch_c_throwback = {
                 "{C:attention}Throwback's{} challenge"
             },
+            ch_c_glass = {
+                "{C:attention}Glass Joker's{} challenge"
+            },
             ch_c_blueprint = {
                 "{C:attention}Blueprint's{} challenge"
             },

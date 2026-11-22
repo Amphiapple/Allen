@@ -1,4 +1,4 @@
-Allen.Challenge_stakes.c_allen_juggler = 4
+Allen.Challenge_stakes.c_allen_jolly = 4
 
 SMODS.Challenge { --Jolly Joker
     key = 'jolly',

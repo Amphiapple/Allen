@@ -13,7 +13,7 @@ SMODS.Challenge { --Even Steven
         },
     },
     consumeables = {
-        {id = 'c_justice'},
+        {id = 'c_justice', edition = 'negative'},
     },
     deck = {
         type = 'Challenge Deck',

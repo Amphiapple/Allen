@@ -5,7 +5,8 @@ Additions:
 
 Changes:
 
-- 
+- Even Steven's challenge starting Justice tarot is negative
+- Ride The Bus' challenge bans Hologram
 
 Fixes:
 

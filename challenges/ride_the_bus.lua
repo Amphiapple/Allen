@@ -17,6 +17,11 @@ SMODS.Challenge { --Ride The Bus
     jokers = {
         {id = 'j_ride_the_bus', eternal = true}
     },
+    restrictions = {
+        banned_cards = {
+            {id = 'j_hologram'}
+        }
+    },
     deck = {
         type = 'Abandoned Deck',
         cards = {

@@ -146,7 +146,7 @@ local files = {
             --'bloodstone',
             --'arrowhead',
             --'onyx_agate',
-            --'glass',
+            'glass',
             --'ring_master',
             --'flower_pot',
             'blueprint',
