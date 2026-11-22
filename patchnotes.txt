@@ -1,5 +1,6 @@
 Additions:
 
+- Jolly Joker's challenge
 - Seltzer's challenge
 
 Changes:
@@ -8,4 +9,5 @@ Changes:
 
 Fixes:
 
-- Ancient Joker's challenge has joker text
+- Credit Card's challenge correctly states Gold Stake
+- Ancient Joker's challenge states the joker's challenge

@@ -32,7 +32,7 @@ local files = {
             --'lusty_joker',
             --'wrathful_joker',
             --'gluttenous_joker',
-            --'jolly',
+            'jolly',
             --'zany',
             --'mad',
             --'crazy',

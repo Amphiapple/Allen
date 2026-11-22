@@ -61,6 +61,9 @@ return {
             ch_c_joker = {
                 "{C:attention}Joker's{} challenge"
             },
+            ch_c_jolly = {
+                "{C:attention}Jolly Joker's{} challenge"
+            },
             ch_c_half = {
                 "{C:attention}Half Joker's{} challenge"
             },
@@ -196,6 +199,10 @@ return {
             },
 
             --special challenge rules
+            ch_c_pairkiller = {
+                "Lose run if a {C:attention}High Card{} or {C:attention}Pair{} is played"
+            },
+
             ch_c_the_snap_1 = {
                 "Start with {C:red}-1{} card slot and"
             },

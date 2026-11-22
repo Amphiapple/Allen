@@ -8,7 +8,7 @@ SMODS.Challenge { --Credit Card
     rules = {
         custom = {
             {id = 'credit_card'},
-            {id = 'purple_stake'},
+            {id = 'gold_stake'},
             {id = 'buy_now_pay_later_1'},
             {id = 'buy_now_pay_later_2'},
         },
