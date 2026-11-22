@@ -124,6 +124,12 @@ return {
             ch_c_popcorn = {
                 "{C:attention}Popcorn's{} challenge"
             },
+            ch_c_ancient = {
+                "{C:attention}Ancient Joker's{} challenge"
+            },
+            ch_c_selzer = {
+                "{C:attention}Seltzer's{} challenge"
+            },
             ch_c_acrobat = {
                 "{C:attention}Acrobat's{} challenge"
             },
@@ -310,7 +316,17 @@ return {
             ch_c_type_advantage_5 = {
                 "{C:diamonds}Diamonds:{} earn {C:money}$1{}, {C:spades}Spades{} lose {C:money}$2{}"
             },
-            
+
+            ch_c_cleaning_up_1 = {
+                "{C:attention,T:j_selzer}Seltzer{} gains {C:blue}+1{} hand when using a consumable"
+            },
+            ch_c_cleaning_up_2 = {
+                "{C:attention,T:j_selzer}Seltzer {S:1.1,C:red,E:2}self destructs{} if overfilled"
+            },
+            ch_c_cleaning_up_3 = {
+                "Lose run when {C:attention,T:j_selzer}Seltzer{} is drank or removed"
+            },
+
             ch_c_last_stand = {
                 "Score no chips except on {C:attention}final hand{} of round"
             },

@@ -1,7 +1,7 @@
 Allen.Challenge_stakes.c_allen_todo_list = 6
 
 SMODS.Challenge { --To Do List
-    key = 'to_do_list',
+    key = 'todo_list',
     loc_txt = {
         name = 'Safecracking'
     },

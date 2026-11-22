@@ -128,7 +128,7 @@ local files = {
             'ancient',
             --'ramen',
             --'walkie_talkie',
-            --'selzer',
+            'selzer',
             --'castle',
             --'smiley',
             --'campfire',

@@ -1,6 +1,6 @@
 Additions:
 
-- 
+- Seltzer's challenge
 
 Changes:
 
@@ -8,4 +8,4 @@ Changes:
 
 Fixes:
 
-- T
+- Ancient Joker's challenge has joker text
