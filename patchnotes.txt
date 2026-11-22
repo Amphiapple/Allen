@@ -1,20 +1,11 @@
 Additions:
 
-- Seance's challenge
-- Juggler's challenge
-- Drunkard's challenge
-- Ancient Joker's challenge
-- Seeing Double's challenge
+- 
 
 Changes:
 
-- Odd Todd challenge Strength Tarot > Negative Splash Joker
-- Superposition challenge Gold Stake > White Stake
-- Acrobat challenge Black Stake > White Stake
-- Wee Joker challenge White Stake > Black Stake
-- Million Dollar Stake White Stake > Gold Stake
-- Million Dollar Stake is now To The Moon's challenge
+- 
 
 Fixes:
 
-- Turtle Bean and Throwback challenges correctly increases prices in the shop
+- T
