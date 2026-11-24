@@ -1,7 +1,10 @@
 Additions:
 
+- New gold stake rework
+
 - Jolly Joker's challenge
 - Seltzer's challenge
+- Glass Joker's challenge
 
 Changes:
 

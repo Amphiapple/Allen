@@ -17,6 +17,9 @@ SMODS.Challenge { --Glass Joker
             {id = 'glass'},
             {id = 'gold_stake'},
         },
+        modifiers = {
+            {id = 'joker_slots', value = 4},
+        },
     },
     jokers = {
         {id = 'j_glass', eternal = true},
