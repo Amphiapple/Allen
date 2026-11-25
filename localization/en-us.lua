@@ -194,7 +194,7 @@ return {
                 "Challenge is played on {C:blue}Blue Deck{}"
             },
             ch_c_yellow_deck = {
-                "Challenge is played on {C:blue}Blue Deck{}"
+                "Challenge is played on {C:money}Yellow Deck{}"
             },
             ch_c_abandoned_deck = {
                 "Challenge is played on {C:attention}Abandoned Deck{}"
@@ -269,8 +269,11 @@ return {
                 "{C:red}X5{C:attention} Boss Blind{} size"
             },
 
-            ch_c_single_use_drill = {
-                "Destroy and {C:red}ban{} all {C:attention}Jokers{} at end of round"
+            ch_c_single_use_drill_1 = {
+                "Selling or {C:attention}destroying{} a {C:attention}Joker {C:red}bans{} it"
+            },
+            ch_c_single_use_drill_2 = {
+                "{C:attention}Destroy{} a random {C:attention}Joker{} at end of round"
             },
 
             ch_c_root_sum_square_1 = {
