@@ -8,7 +8,7 @@ SMODS.Challenge { --Trading Card
     rules = {
         custom = {
             {id = 'trading'},
-            {id = 'purple_stake'},
+            {id = 'black_stake'},
             {id = 'no_shop_jokers'},
             {id = 'dishonest_woodcutter_1'},
             {id = 'dishonest_woodcutter_2'},

@@ -158,7 +158,7 @@ local files = {
             --'matador',
             --'hit_the_road',
             --'duo',
-            --'trio',
+            'trio',
             --'family',
             'order',
             --'tribe',

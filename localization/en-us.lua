@@ -167,14 +167,14 @@ return {
             ch_c_blueprint = {
                 "{C:attention}Blueprint's{} challenge"
             },
-            ch_c_trio = {
-                "{C:attention}Trio's{} challenge"
-            },
             ch_c_wee = {
                 "{C:attention}Wee Joker's{} challenge"
             },
             ch_c_seeing_double = {
                 "{C:attention}Seeing Double's{} challenge"
+            },
+            ch_c_trio = {
+                "{C:attention}The Trio's{} challenge"
             },
             ch_c_order = {
                 "{C:attention}The Order's{} challenge"
@@ -394,6 +394,13 @@ return {
             },
             ch_c_haunted_hands_2 = {
                 "{C:attention}poker hand{} has been played this {C:attention}Ante{}"
+            },
+
+            ch_c_increasing_severity_1 = {
+                "{X:mult,C:white}X1.5{} Mult per hand played each round"
+            },
+            ch_c_increasing_severity_2 = {
+                "Score is capped at {C:attention}40%{} of required chips"
             },
 
             ch_c_hypothermia_1 = {

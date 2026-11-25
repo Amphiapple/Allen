@@ -3,8 +3,10 @@ Additions:
 - New gold stake rework
 
 - Jolly Joker's challenge
+- Madness' challenge
 - Seltzer's challenge
 - Glass Joker's challenge
+- The Trio's challenge
 
 Changes:
 
@@ -14,5 +16,6 @@ Changes:
 
 Fixes:
 
+- Trading Card's challenge correctly states Black Stake
 - Credit Card's challenge correctly states Gold Stake
 - Ancient Joker's challenge states the joker's challenge
