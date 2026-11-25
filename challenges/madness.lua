@@ -3,14 +3,13 @@ Allen.Challenge_stakes.c_allen_madness = 8
 SMODS.Challenge { --Madness
     key = 'madness',
     loc_txt = {
-        name = 'Single Use Drill'
+        name = 'Permanent Death'
     },
     rules = {
         custom = {
             {id = 'madness'},
             {id = 'gold_stake'},
-            {id = 'single_use_drill_1'},
-            {id = 'single_use_drill_2'},
+            {id = 'permanent_death'},
         },
     },
     deck = {
@@ -31,6 +30,7 @@ SMODS.Challenge { --Madness
                     for k, v in ipairs(deletable_jokers) do
                         G.GAME.banned_keys[v.config.center_key] = true
                         SMODS.destroy_cards(v, nil, nil, true)
+                    end
                     return true
                 end
             }))

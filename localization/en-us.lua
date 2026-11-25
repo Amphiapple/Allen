@@ -269,7 +269,7 @@ return {
                 "{C:red}X5{C:attention} Boss Blind{} size"
             },
 
-            ch_c_single_use_drill_2 = {
+            ch_c_permanent_death = {
                 "{C:attention}Destroy{} and {C:red}ban{} all {C:attention}Joker{} at end of round"
             },
 
