@@ -269,11 +269,8 @@ return {
                 "{C:red}X5{C:attention} Boss Blind{} size"
             },
 
-            ch_c_single_use_drill_1 = {
-                "Selling or {C:attention}destroying{} a {C:attention}Joker {C:red}bans{} it"
-            },
             ch_c_single_use_drill_2 = {
-                "{C:attention}Destroy{} a random {C:attention}Joker{} at end of round"
+                "{C:attention}Destroy{} and {C:red}ban{} all {C:attention}Joker{} at end of round"
             },
 
             ch_c_root_sum_square_1 = {
