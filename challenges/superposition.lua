@@ -8,7 +8,7 @@ SMODS.Challenge { --Superposition
     rules = {
         custom = {
             {id = 'superposition'},
-            {id = 'gold_stake'},
+            {id = 'black_stake'},
         },
         modifiers = {
             {id = 'hands', value = 3},

@@ -90,7 +90,7 @@ local files = {
             --'cavendish',
             --'card_sharp',
             --'red_card',
-            --'madness',
+            'madness',
             'square',
             'seance',
             --'riff_raff',

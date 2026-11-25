@@ -113,6 +113,9 @@ return {
             ch_c_todo_list = {
                 "{C:attention}To Do List's{} challenge"
             },
+            ch_c_madness = {
+                "{C:attention}Madness'{} challenge"
+            },
             ch_c_square = {
                 "{C:attention}Square Joker's{} challenge"
             },
@@ -190,6 +193,9 @@ return {
             ch_c_blue_deck = {
                 "Challenge is played on {C:blue}Blue Deck{}"
             },
+            ch_c_yellow_deck = {
+                "Challenge is played on {C:blue}Blue Deck{}"
+            },
             ch_c_abandoned_deck = {
                 "Challenge is played on {C:attention}Abandoned Deck{}"
             },
@@ -261,6 +267,10 @@ return {
 
             ch_c_safecracking = {
                 "{C:red}X5{C:attention} Boss Blind{} size"
+            },
+
+            ch_c_single_use_drill = {
+                "Destroy and {C:red}ban{} all {C:attention}Jokers{} at end of round"
             },
 
             ch_c_root_sum_square_1 = {
