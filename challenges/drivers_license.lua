@@ -27,7 +27,43 @@ SMODS.Challenge { --Driver's License
 
     calculate = function(self, context)
         if context.final_scoring_step then
-            local temp_Xmult = G.GAME.current_round.hands_played
+            local count = 0
+            for k, v in ipairs(G.hand.cards) do
+                if v.config.center ~= G.P_CENTERS.c_base then
+                    count = count + 1
+                end
+            end
+            local temp_Xmult
+            local temp_sound
+            local temp_text
+            if count == 3 or count == 4 then
+                temp_Xmult = 1.5
+                temp_sound = "multhit2"
+                temp_text = "Safe!"
+            elseif count == 2 or count == 5 then
+                temp_Xmult = 1
+                temp_sound = "multhit1"
+                temp_text = "Close!"
+            else
+                temp_Xmult = 0.5
+                temp_sound = "timpani"
+                temp_text = "Danger!"
+            end
+            G.E_MANAGER:add_event(Event({
+                func = function()
+                    play_sound(temp_sound, 1)
+                    attention_text({
+                        scale = 1.4,
+                        text = temp_text,
+                        color = G.C.MULT,
+                        hold = 0.45,
+                        align = "cm",
+                        offset = { x = 0, y = -2.7 },
+                        major = G.play,
+                    })
+                    return true
+                end,
+            }))
             return{
                 Xmult = temp_Xmult
             }

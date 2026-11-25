@@ -64,7 +64,7 @@ SMODS.Challenge { --Wee Joker
                         attention_text({
                             scale = 1.4,
                             text = "Not Big!",
-                            hold = 0.45,
+                            hold = 1.4,
                             align = "cm",
                             offset = { x = 0, y = -2.7 },
                             major = G.play,

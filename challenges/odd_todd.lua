@@ -27,7 +27,7 @@ SMODS.Challenge { --Odd Todd
 					attention_text({
 						scale = 1.4,
 						text = "Not Odd!",
-						hold = 0.45,
+						hold = 1.4,
 						align = "cm",
 						offset = { x = 0, y = -2.7 },
 						major = G.play,

@@ -24,7 +24,7 @@ SMODS.Challenge { --Square Joker
                     attention_text({
                         scale = 1.4,
                         text = "Square!",
-                        hold = 0.45,
+                        hold = 0.7,
                         align = "cm",
                         offset = { x = 0, y = -2.7 },
                         major = G.play,
@@ -43,7 +43,7 @@ SMODS.Challenge { --Square Joker
                     attention_text({
                         scale = 1.4,
                         text = "Sq. Root!",
-                        hold = 0.45,
+                        hold = 0.7,
                         align = "cm",
                         offset = { x = 0, y = -2.7 },
                         major = G.play,

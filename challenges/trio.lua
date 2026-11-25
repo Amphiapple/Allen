@@ -3,7 +3,8 @@ Allen.Challenge_stakes.c_allen_trio = 6
 SMODS.Scoring_Calculation {
 	key = 'allen_trio',
 	func = function(self, chips, mult, flames)
-		return math.floor(math.min(0.4 * G.GAME.blind.chips, chips * mult) + 0.5)
+        local score_cap = 0.75 - 0.05 * (G.GAME.round_resets.ante - 1)
+		return math.floor(math.min(score_cap * G.GAME.blind.chips, chips * mult) + 0.5)
 	end,
 }
 
@@ -20,26 +21,21 @@ SMODS.Challenge { --The Trio
             {id = 'increasing_severity_2'},
         },
     },
+    restrictions = {
+        banned_other = {
+            {id = 'bl_needle', type = 'blind'},
+        }
+    },
     deck = {
         type = 'Challenge Deck',
     },
 
-    apply = function (self)
+    apply = function(self)
         G.E_MANAGER:add_event(Event({
             func = function()
                 SMODS.set_scoring_calculation('allen_trio')
                 return true
             end
         }))
-    end,
-    calculate = function(self, context)
-        if context.final_scoring_step then
-            local temp_Xmult = 1.5 ^ G.GAME.current_round.hands_played
-            if temp_Xmult > 1 then
-                return {
-                    Xmult = temp_Xmult
-                }
-            end
-        end
     end
 }

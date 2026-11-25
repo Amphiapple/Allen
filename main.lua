@@ -163,7 +163,7 @@ local files = {
             'order',
             --'tribe',
             --'stuntman',
-            --'invisible',
+            'invisible',
             --'brainstorm',
             --'satellite',
             --'shoot_the_moon',

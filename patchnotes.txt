@@ -7,6 +7,7 @@ Additions:
 - Seltzer's challenge
 - Glass Joker's challenge
 - The Trio's challenge
+- Invisible Joker's challenge
 
 Changes:
 

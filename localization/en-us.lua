@@ -179,6 +179,9 @@ return {
             ch_c_order = {
                 "{C:attention}The Order's{} challenge"
             },
+            ch_c_invisible = {
+                "{C:attention}Invisible Joker's{} challenge"
+            },
             ch_c_drivers_license = {
                 "{C:attention}Driver's License's{} challenge"
             },
@@ -397,10 +400,10 @@ return {
             },
 
             ch_c_increasing_severity_1 = {
-                "{X:mult,C:white}X1.5{} Mult per hand played each round"
+                "Score is capped at {C:attention}75%{} of required chips"
             },
             ch_c_increasing_severity_2 = {
-                "Score is capped at {C:attention}40%{} of required chips"
+                "Cap decreases by {C:attention}5%{} when {C:attention}Boss Blind{} is defeated"
             },
 
             ch_c_hypothermia_1 = {
@@ -408,6 +411,13 @@ return {
             },
             ch_c_hypothermia_2 = {
                 "Debuff all {C:attention}Jokers{} left in the same position"
+            },
+
+            ch_c_ct_scan_1 = {
+                "{C:green}3 in 4{} cards are drawn face down",
+            },
+            ch_c_ct_scan_2 = {
+                "Score no chips if {C:attention}poker hand{} is a {C:attention}High Card{}",
             },
 
             ch_c_traffic_jam_1 = {
