@@ -36,7 +36,7 @@ return {
         },
         Stake = {
             stake_allen_gold_ante = {
-                name = "Golder Staker",
+                name = "Gold Ante Stake",
                 text = {
                     '{C:red}+1{} Discard',
                     'Winning Ante increased to Ante {C:attention}10{}',
@@ -44,10 +44,19 @@ return {
                 }
             },
             stake_allen_gold_reroll = {
-                name = "Golder Staker",
+                name = "Gold Reroll Stake",
                 text = {
                     '{C:red}+1{} Discard',
                     '{C:green}Rerolls{} cost {C:money}$2{} more',
+                    '{s:0.8}Applies all previous Stakes{}'
+                }
+            },
+            stake_allen_gold_rare = {
+                name = "Gold Rare Stake",
+                text = {
+                    '{C:red}+1{} Discard',
+                    '{C:green}Uncommon{} and {C:red}Rare{} Jokers',
+                    'appear less often',
                     '{s:0.8}Applies all previous Stakes{}'
                 }
             }
@@ -63,6 +72,14 @@ return {
             },
             allen_gold_reroll_sticker = {
                 name = "Gold Reroll Sticker",
+                text = {
+                    'Used this Joker',
+                    'to win on {C:attention}Gold Reroll{}',
+                    '{C:attention}Stake{} difficulty',
+                }
+            },
+            allen_gold_rare_sticker = {
+                name = "Gold Rare Sticker",
                 text = {
                     'Used this Joker',
                     'to win on {C:attention}Gold Reroll{}',

@@ -49,3 +49,24 @@ SMODS.Stake {
         G.GAME.modifiers.gold_reroll = true
     end
 }
+
+SMODS.Stake {
+    key = 'gold_rare',
+    name = 'Rare Gold Stake',
+    atlas = 'Stake',
+    pos = { x = 2, y = 0 },
+    sticker_atlas = 'Sticker',
+    sticker_pos = { x = 2, y = 0 },
+    applied_stakes = { 'gold' },
+    prefix_config = { applied_stakes = { mod = false } },
+    colour = HEX("ffcc00"),
+    shiny = true,
+
+    modifiers = function()
+        G.GAME.starting_params.discards = G.GAME.starting_params.discards + 1
+        G.GAME["common" .. "_mod"] = 8/7
+        G.GAME["uncommon" .. "_mod"] = 17/25
+        G.GAME["rare" .. "_mod"] = 3/5
+        G.GAME.modifiers.gold_rare = true
+    end
+}
