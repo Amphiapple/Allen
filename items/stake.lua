@@ -45,7 +45,7 @@ SMODS.Stake {
 
     modifiers = function()
         G.GAME.starting_params.discards = G.GAME.starting_params.discards + 1
-        G.GAME.base_reroll_cost = G.GAME.base_reroll_cost + 2
+        G.GAME.starting_params.reroll_cost = G.GAME.starting_params.reroll_cost + 2
         G.GAME.modifiers.gold_reroll = true
     end
 }
