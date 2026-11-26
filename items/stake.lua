@@ -64,8 +64,8 @@ SMODS.Stake {
 
     modifiers = function()
         G.GAME.starting_params.discards = G.GAME.starting_params.discards + 1
-        G.GAME["common" .. "_mod"] = 8/7
-        G.GAME["uncommon" .. "_mod"] = 17/25
+        G.GAME["common" .. "_mod"] = 77/70
+        G.GAME["uncommon" .. "_mod"] = 20/25
         G.GAME["rare" .. "_mod"] = 3/5
         G.GAME.modifiers.gold_rare = true
     end
