@@ -17,6 +17,6 @@ Changes:
 
 Fixes:
 
-- Trading Card's challenge correctly states Black Stake
+- Trading Card's challenge correctly is on Purple Stake
 - Credit Card's challenge correctly states Gold Stake
 - Ancient Joker's challenge states the joker's challenge

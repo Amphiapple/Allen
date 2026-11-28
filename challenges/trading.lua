@@ -1,4 +1,8 @@
-Allen.Challenge_stakes.c_allen_trading_card = 4
+Allen.Challenge_stakes.c_allen_trading = 6
+
+local dishonest_woodcutter_cards = {
+    {id = 'p_buffoon_normal_1', ids = {'p_buffoon_normal_1', 'p_buffoon_normal_2', 'p_buffoon_jumbo_1', 'p_buffoon_mega_1',}}
+}
 
 SMODS.Challenge { --Trading Card
     key = 'trading',
@@ -8,11 +12,14 @@ SMODS.Challenge { --Trading Card
     rules = {
         custom = {
             {id = 'trading'},
-            {id = 'black_stake'},
+            {id = 'purple_stake'},
             {id = 'no_shop_jokers'},
             {id = 'dishonest_woodcutter_1'},
             {id = 'dishonest_woodcutter_2'},
         },
+        modifiers = {
+            {id = 'joker_slots', value = 3},
+        }
     },
     jokers = {
         {id = 'j_credit_card'},
@@ -20,9 +27,7 @@ SMODS.Challenge { --Trading Card
         {id = 'j_credit_card'},
     },
     restrictions = {
-        banned_cards = {
-            {id = 'p_buffoon_normal_1', ids = {'p_buffoon_normal_1', 'p_buffoon_normal_2', 'p_buffoon_jumbo_1', 'p_buffoon_mega_1',}}
-        },
+        banned_cards = dishonest_woodcutter_cards,
         banned_tags = {
             {id = 'tag_uncommon'},
             {id = 'tag_rare'},
@@ -31,6 +36,7 @@ SMODS.Challenge { --Trading Card
             {id = 'tag_holographic'},
             {id = 'tag_polychrome'},
             {id = 'tag_buffoon'},
+            {id = 'tag_top_up'}
         }
     },
     deck = {
